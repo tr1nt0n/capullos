@@ -1,0 +1,5 @@
+Uses of sieves for this piece:
+
+1. A selector, select leaves to be replaced with articulating tuplets, leaves to be transposed
+2. A harmonic generator, use the space between True's as intervals to transpose
+3. A rhythmic generator (maybe this is best for the second section), use the space between True's as rhythmic intervals

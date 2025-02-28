@@ -1,6 +1,6 @@
 \version "2.23.81"
 \language english
-#(set-default-paper-size "archA")
+#(set-default-paper-size "arch a")
 #(set-global-staff-size 12)
 #(ly:set-option 'relative-includes #t)
 
@@ -12,9 +12,9 @@
 afterGraceFraction = #(cons 15 16)
 
 \header {
-    dedication = \markup \fontsize #4 \center-column {\line \override #'(font-name . "Bodoni72 Book Italic") { { for } \override #'(font-name . "Bodoni72 Book") { Paula } } \with-color #white "."}
+    dedication = \markup \fontsize #4 \center-column {\line \override #'(font-name . "Bodoni72 Book Italic") { { "to" } \override #'(font-name . "Bodoni72 Book") { "Paula" } } \with-color #white "."}
     title = \markup \override #'(font-name . "Bodoni72 Book Italic") \center-column { \line \fontsize #14 { c a p u l l o s } \with-color #white \fontsize #4 "." }
-    subtitle = \markup \center-column { \line \fontsize #6 { \override #'(font-name . "Bodoni72 Book") { for } \override #'(font-name . "Bodoni72 Book Italic") { "piano alone." } } \with-color #white \fontsize #4 "."}
+    subtitle = \markup \center-column { \line \fontsize #4 { \override #'(font-name . "Bodoni72 Book Italic") { "for " } \override #'(font-name . "Bodoni72 Book") { "piano alone." } } \with-color #white \fontsize #4 "."}
     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #4 {"Trinity Hlynn Prater (*2000)"}
 }
 
@@ -40,7 +40,7 @@ afterGraceFraction = #(cons 15 16)
         \override BarNumber.Y-extent = ##f
         \override BarNumber.Y-offset = -12
         \override BarNumber.extra-offset = #'(-4 . 4)
-        \override BarNumber.font-size = 1
+        \override BarNumber.font-size = 4
         \override BarNumber.padding = 1
         \override BarNumber.font-name = "Bodoni72 Book"
         \override MetronomeMark.stencil = ##f
@@ -75,7 +75,7 @@ afterGraceFraction = #(cons 15 16)
         pedalSustainStyle = #'mixed
 
         \override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 5) (minimum distance . 5) (padding . 1) (stretchability . 0))
-        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 13) (minimum distance . 13) (padding . 0) (stretchability . 0))
+        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 0) (minimum distance . 0) (padding . 3) (stretchability . 0))
 
         \override AccidentalSuggestion.avoid-slur = #'ignore
         \override Accidental.layer = 3
@@ -87,12 +87,13 @@ afterGraceFraction = #(cons 15 16)
         \override Script.whiteout-style = #'outline
         \override Script.whiteout = 1
 
-        \override BarLine.color = \二
+        % \override BarLine.color = \二
         \override BarLine.transparent = ##t
         \override BarLine.hair-thickness = 0.5
         \override BarLine.thick-thickness = #10
         \override BarLine.layer = 2
-        % \override BarLine.X-extent = #'(0 . 0)
+        \override BarLine.X-offset = 0
+        \override BarLine.X-extent = #'(-1.25 . -1.25)
         % \override BarLine.X-extent = ##f
         % \override BarLine.X-offset = -4
         % \override BarLine.extra-offset = #'(-0.5 . 0.5)
@@ -115,9 +116,9 @@ afterGraceFraction = #(cons 15 16)
         \override Clef.layer = 2
         \override Clef.whiteout-style = #'outline
         \override Clef.whiteout = 1
-        \override Clef.color = \二
+        % \override Clef.color = \二
 
-        \override DynamicText.font-size = #-2
+        \override DynamicText.font-size = #-1
         \override DynamicText.layer = 2
         \override DynamicText.whiteout-style = #'outline
         \override DynamicText.whiteout = 1
@@ -128,9 +129,9 @@ afterGraceFraction = #(cons 15 16)
 
         \override Hairpin.to-barline = ##f
 
-        \override KeyCancellation.color = \二
+        % \override KeyCancellation.color = \二
 
-        \override KeySignature.color = \二
+        % \override KeySignature.color = \二
         \override KeySignature.layer = 2
         \override KeySignature.whiteout-style = #'outline
         \override KeySignature.whiteout = 1
@@ -140,7 +141,7 @@ afterGraceFraction = #(cons 15 16)
         \override MeasureSpanner.font-size = 7
         \override MeasureSpanner.font-name = "Bodoni72 Book"
         \override MeasureSpanner.padding = 5
-        \override MeasureSpanner.color = \二
+        % \override MeasureSpanner.color = \二
 
         \override NoteCollision.merge-differently-dotted = ##t
         \override NoteCollision.merge-differently-headed = ##t
@@ -150,9 +151,9 @@ afterGraceFraction = #(cons 15 16)
         \override OttavaBracket.whiteout = 1
 
         \override PianoPedalBracket.shorten-pair = #'(0 . -4)
-        \override PianoPedalBracket.color = \一
+        % \override PianoPedalBracket.color = \一
 
-        \override SpanBar.color = \二
+        % \override SpanBar.color = \二
 
         \override Staff.thickness = #0.5
 
@@ -173,7 +174,7 @@ afterGraceFraction = #(cons 15 16)
         \override StemTremolo.whiteout = 1
         \override StemTremolo.layer = 2
 
-        \override SustainPedal.color = \一
+        % \override SustainPedal.color = \一
 
         \override TextScript.font-name = "Bodoni72 Book"
         \override TextScript.whiteout = 1
@@ -196,7 +197,6 @@ afterGraceFraction = #(cons 15 16)
         tupletFullLength = ##t
         \override TupletBracket.full-length-to-extent = ##f
         \override TupletBracket.padding = 2
-        \override TupletNumber.font-size = 1.5
         \override TupletBracket.bracket-visibility = ##t
         \override TupletBracket.layer = 2
         \override TupletBracket.whiteout-style = #'outline
@@ -206,16 +206,17 @@ afterGraceFraction = #(cons 15 16)
         \override TupletNumber.whiteout-style = #'outline
         \override TupletNumber.whiteout = 1
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
-        \override TupletNumber.font-name = "Bodoni72 Book"
-        \override TupletBracket.stencil =
-            #(lambda (grob)
-               (let* ((pos (ly:grob-property grob 'positions))
-                      (dir (ly:grob-property grob 'direction))
-                      (new-pos (if (= dir 1)
-                                   (max (car pos)(cdr pos))
-                                   (min (car pos)(cdr pos)))))
-                 (ly:grob-set-property! grob 'positions (cons new-pos new-pos))
-                 (ly:tuplet-bracket::print grob)))
+        \override TupletNumber.font-name = "Bodoni72 Book Italic"
+        \override TupletNumber.font-size = 5
+        % \override TupletBracket.stencil =
+        %     #(lambda (grob)
+        %        (let* ((pos (ly:grob-property grob 'positions))
+        %               (dir (ly:grob-property grob 'direction))
+        %               (new-pos (if (= dir 1)
+        %                            (max (car pos)(cdr pos))
+        %                            (min (car pos)(cdr pos)))))
+        %          (ly:grob-set-property! grob 'positions (cons new-pos new-pos))
+        %          (ly:tuplet-bracket::print grob)))
         \override TupletBracket.direction = #UP
 
         \override VoltaBracketSpanner.padding = 8
@@ -354,8 +355,8 @@ afterGraceFraction = #(cons 15 16)
 	        #:music "haydn"
 	        #:brace "haydn"
 	))
-    min-systems-per-page = 3
-    max-systems-per-page = 3
+    % min-systems-per-page = 3
+    % max-systems-per-page = 3
     % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
     system-system-spacing = #'((basic-distance . 30) (minimum-distance . 30) (padding . 0) (stretchability . 30))
     indent = 20\mm
