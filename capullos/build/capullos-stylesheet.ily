@@ -100,8 +100,8 @@ afterGraceFraction = #(cons 15 16)
 
         autoBeaming = ##f
         \override Beam.breakable = ##t
-        \override Beam.damping = 2
-        \override Beam.concaveness = #10000
+        % \override Beam.damping = 2
+        % \override Beam.concaveness = #10000
         \override Beam.beam-thickness = #1.15
         \override Beam.length-fraction = #1.84
 

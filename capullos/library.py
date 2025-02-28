@@ -42,6 +42,72 @@ def capullos_score(time_signatures):
 
 # notation tools
 
+
+def connect_notes_to_upper_staff(selector=trinton.pleaves(), stem_lengths=28):
+    def connect_notes(argument):
+        selections = selector(argument)
+
+        # r"\override Stem.cross-staff = ##t",
+        #             r"\once \override Stem.Y-extent = #'(0 . 0)",
+        #             r"\once \override Stem.details.lengths = #'(33)",
+        #             r"\once \override Flag.cross-staff = ##t",
+        #             r"\once \override Flag.Y-extent = #'(0 . 0)",
+        #             r"\once \override StaffGroup.Flag.Y-offset = 33",
+
+        opening_list = [
+            r"\override Flag.stencil = ##f",
+            r"\override Staff.Stem.direction = #UP",
+            # r"\override Stem.cross-staff = ##t",
+            # r"\override Stem.Y-extent = #'(0 . 0)",
+        ]
+
+        closing_list = [
+            r"\revert Staff.Flag.stencil",
+            r"\revert Staff.Stem.direction",
+        ]
+
+        if not isinstance(stem_lengths, list):
+            for leaf in abjad.select.leaves(selections, pitched=True):
+                abjad.attach(
+                    abjad.LilyPondLiteral(
+                        [
+                            r"\once \override Stem.cross-staff = ##t",
+                            r"\once \override Stem.Y-extent = #'(0 . 0)",
+                            rf"\once \override Stem.details.lengths = #'({stem_lengths})",
+                            r"\once \override Flag.cross-staff = ##t",
+                            r"\once \override Flag.Y-extent = #'(0 . 0)",
+                        ],
+                        site="before",
+                    ),
+                    leaf,
+                )
+
+        else:
+            for leaf, stem_length in zip(
+                abjad.select.leaves(selections), stem_lengths, pitched=True
+            ):
+                literal = abjad.LilyPondLiteral(
+                    [
+                        r"\once \override Stem.cross-staff = ##t",
+                        r"\once \override Stem.Y-extent = #'(0 . 0)",
+                        rf"\once \override Stem.details.lengths = #'({stem_length})",
+                        r"\once \override Flag.cross-staff = ##t",
+                        r"\once \override Flag.Y-extent = #'(0 . 0)",
+                    ],
+                    site="before",
+                )
+                abjad.attach(literal, leaf)
+
+        opening_literal = abjad.LilyPondLiteral(opening_list, site="before")
+
+        closing_literal = abjad.LilyPondLiteral(closing_list, site="absolute_after")
+
+        abjad.attach(opening_literal, abjad.select.leaf(selections, 0))
+        abjad.attach(closing_literal, abjad.select.leaf(selections, -1))
+
+    return connect_notes
+
+
 def clean_time_signatures(score):
     for leaf in abjad.select.leaves(score["Global Context"]):
         if abjad.get.has_indicator(leaf, abjad.TimeSignature):
@@ -59,6 +125,7 @@ def clean_time_signatures(score):
                     ),
                     leaf,
                 )
+
 
 def handle_accidentals(score, force_accidentals=True):
     pties = abjad.select.logical_ties(score, pitched=True)
@@ -178,7 +245,9 @@ def handle_accidentals(score, force_accidentals=True):
                     abjad.Articulation(f"{accidental_name}-articulation"), first_leaf
                 )
 
+
 # markups
+
 
 def return_metronome_markup(
     note_value,

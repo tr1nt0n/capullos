@@ -39,7 +39,10 @@ for interval in interval_list_1:
 
     interval_counter += 1
 
-def sieve_transposition(selector=trinton.logical_ties(pitched=True, grace=False), index=0):
+
+def sieve_transposition(
+    selector=trinton.logical_ties(pitched=True, grace=False), index=0
+):
     def transposition(argument):
         selections = selector(argument)
         intervals = trinton.rotated_sequence(interval_list, index % len(interval_list))
@@ -60,7 +63,6 @@ def sieve_transposition(selector=trinton.logical_ties(pitched=True, grace=False)
                 new_interval = previous_pitch_class + interval
 
                 abjad.mutate.transpose(selection, new_interval)
-
 
             previous_pitch = first_leaf.written_pitch
 

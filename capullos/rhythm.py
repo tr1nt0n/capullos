@@ -11,8 +11,10 @@ logistic_map = [_ for _ in trinton.logistic_map(x=4, r=3.57, n=9) if _ > 2]
 
 logistic_map = trinton.remove_adjacent(logistic_map)
 
+
 def logistic_map_sequence(index):
     return trinton.rotated_sequence(logistic_map, index % len(logistic_map))
+
 
 # sieves
 
@@ -42,6 +44,7 @@ sieve_7 = sieve_7a & sieve_7b
 
 sieve = sieve_1 | sieve_2 | sieve_3 | sieve_4 | sieve_5 | sieve_6 | sieve_7
 
+
 def punctuation_selector(
     first=False, last=False, pitched=None, grace=None, exclude=None
 ):
@@ -69,38 +72,84 @@ def punctuation_selector(
 
     return selector
 
-def punctuation_rhythm(index=0, extra_counts=[0]):
+
+def punctuation_rhythm(stage=1, denominator=16, index=0, extra_counts=[0]):
     def rhythm(durations):
         container = abjad.Container()
-        initial_talea = rmakers.talea(durations, logistic_map_sequence(index), 16, extra_counts=extra_counts)
+        initial_talea = rmakers.talea(
+            durations,
+            logistic_map_sequence(index),
+            denominator,
+            extra_counts=extra_counts,
+        )
         container.extend(initial_talea)
         selector = punctuation_selector()
         relevant_ties = selector(container)
 
-        for tie in relevant_ties:
-            tie_duration = abjad.get.duration(tie, preprolated=True)
+        if stage > 1:
+            for tie in relevant_ties:
+                first_leaf = abjad.select.leaf(tie, 0)
+                leaf_duration = abjad.get.duration(first_leaf, preprolated=True)
 
-            new_components = []
+                new_components = []
 
-            if tie_duration == abjad.Duration((1, 8)):
-                tuplet = rmakers.tuplet([abjad.Duration(1, 8)], [(1, 1, 1)])
-                new_components.extend(tuplet)
+                if leaf_duration <= abjad.Duration((1, 8)):
+                    tuplet = rmakers.tuplet([leaf_duration], [(1, 1, 1)])
+                    rmakers.rewrite_dots(tuplet)
+                    rmakers.trivialize(tuplet)
+                    rmakers.rewrite_rest_filled(tuplet)
+                    rmakers.rewrite_sustained(tuplet)
+                    rmakers.extract_trivial(tuplet)
+                    trinton.respell_tuplets(tuplet, rewrite_brackets=False)
+                    last_tuplet_leaf = abjad.select.leaf(tuplet, -1)
+                    abjad.attach(abjad.Tie(), last_tuplet_leaf)
+                    new_components.extend(tuplet)
 
-            else:
-                tuplet = rmakers.tuplet([abjad.Duration(1, 8)], [(1, 1, 1)])
-                new_components.extend(tuplet)
-                remainder = tie_duration - abjad.Duration((1, 8))
-                new_note = rmakers.note([remainder])
-                new_leaves = abjad.select.leaves(new_note)
-                new_components.extend(new_leaves)
+                else:
+                    tuplet = rmakers.tuplet([abjad.Duration(1, 8)], [(1, 1, 1)])
+                    rmakers.rewrite_dots(tuplet)
+                    rmakers.trivialize(tuplet)
+                    rmakers.rewrite_rest_filled(tuplet)
+                    rmakers.rewrite_sustained(tuplet)
+                    rmakers.extract_trivial(tuplet)
+                    trinton.respell_tuplets(tuplet, rewrite_brackets=False)
+                    last_tuplet_leaf = abjad.select.leaf(tuplet, -1)
+                    abjad.attach(abjad.Tie(), last_tuplet_leaf)
+                    new_components.extend(tuplet)
+                    remainder = leaf_duration - abjad.Duration((1, 8))
+                    new_note = rmakers.note([remainder])
+                    new_leaves = abjad.select.leaves(new_note)
+                    new_components.extend(new_leaves)
 
-                tuplet = abjad.select.tuplets(container)
-                last_tuplet_leaf = abjad.select.leaf(tuplet, -1)
-                abjad.attach(abjad.Tie(), last_tuplet_leaf)
+                    if abjad.get.has_indicator(first_leaf, abjad.Tie):
+                        last_leaf = abjad.select.leaf(new_note, -1)
+                        abjad.attach(abjad.Tie(), last_leaf)
 
-            abjad.mutate.replace(tie, new_components)
+                abjad.mutate.replace(first_leaf, new_components)
 
+        if stage == 3:
+            tuplets = abjad.select.tuplets(container)
+
+            for tuplet in tuplets:
+                if not isinstance(abjad.get.parentage(tuplet).parent, abjad.Tuplet):
+                    leaves = abjad.select.leaves(tuplet)
+                    for leaf in leaves:
+                        abjad.detach(abjad.Tie, leaf)
+                    rmakers.force_rest(leaves)
+                else:
+                    leaves = abjad.select.leaves(tuplet)
+                    for leaf in leaves:
+                        abjad.detach(abjad.Tie, leaf)
+                    rmakers.force_note(leaves)
+
+        rmakers.rewrite_dots(abjad.select.tuplets(container))
+        rmakers.trivialize(abjad.select.tuplets(container))
+        rmakers.rewrite_rest_filled(abjad.select.tuplets(container))
+        rmakers.rewrite_sustained(abjad.select.tuplets(container))
+        rmakers.extract_trivial(abjad.select.tuplets(container))
+        trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
         components = abjad.mutate.eject_contents(container)
+
         return components
 
     return rhythm
