@@ -11,12 +11,12 @@
 
 afterGraceFraction = #(cons 15 16)
 
-\header {
-    dedication = \markup \fontsize #4 \center-column {\line \override #'(font-name . "Bodoni72 Book Italic") { { "to" } \override #'(font-name . "Bodoni72 Book") { "Paula" } } \with-color #white "."}
-    title = \markup \override #'(font-name . "Bodoni72 Book Italic") \center-column { \line \fontsize #14 { c a p u l l o s } \with-color #white \fontsize #4 "." }
-    subtitle = \markup \center-column { \line \fontsize #4 { \override #'(font-name . "Bodoni72 Book Italic") { "for " } \override #'(font-name . "Bodoni72 Book") { "piano alone." } } \with-color #white \fontsize #4 "."}
-    composer = \markup \override #'(font-name . "Bodoni72") \fontsize #4 {"Trinity Hlynn Prater (*2000)"}
-}
+% \header {
+%     dedication = \markup \fontsize #4 \center-column {\line \override #'(font-name . "Bodoni72 Book Italic") { { "to" } \override #'(font-name . "Bodoni72 Book") { "Paula" } } \with-color #white "."}
+%     title = \markup \override #'(font-name . "Bodoni72 Book Italic") \center-column { \line \fontsize #14 { c a p u l l o s } \with-color #white \fontsize #4 "." }
+%     subtitle = \markup \center-column { \line \fontsize #4 { \override #'(font-name . "Bodoni72 Book Italic") { "for " } \override #'(font-name . "Bodoni72 Book") { "piano alone." } } \with-color #white \fontsize #4 "."}
+%     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #4 {"Trinity Hlynn Prater (*2000)"}
+% }
 
 \layout {
     \accidentalStyle neo-modern
