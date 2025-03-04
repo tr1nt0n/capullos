@@ -143,8 +143,7 @@ afterGraceFraction = #(cons 15 16)
         \override MeasureSpanner.padding = 5
         % \override MeasureSpanner.color = \二
 
-        \override NoteCollision.merge-differently-dotted = ##t
-        \override NoteCollision.merge-differently-headed = ##t
+        % \override NoteCollision.merge-differently-dotted = ##t
 
         \override OttavaBracket.layer = 2
         \override OttavaBracket.whiteout-style = #'outline

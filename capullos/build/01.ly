@@ -4,50 +4,66 @@
         {
             \time 6/8
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
+            \noBreak
             \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 4/16
             s1 * 1/4
+            \noBreak
             \time 6/8
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
+            \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
+            \pageBreak
         }
         \context StaffGroup = "Staff Group"
         <<
@@ -266,8 +282,10 @@
                                         \override Staff.Stem.stemlet-length = 0.75
                                         \voiceOne
                                         g''''16
+                                        - \marcato
                                         [
                                         g''''16
+                                        - \marcato
                                         g''''16
                                         ~
                                     }
@@ -286,8 +304,10 @@
                                     {
                                         \override Staff.Stem.stemlet-length = 0.75
                                         g''''32
+                                        - \marcato
                                         [
                                         g''''32
+                                        - \marcato
                                         \revert Staff.Stem.stemlet-length
                                         g''''32
                                         ]
@@ -299,6 +319,7 @@
                                 {
                                     g''''4
                                     g''''16
+                                    _ \f
                                     ~
                                 }
                                 g''''4.
@@ -314,7 +335,9 @@
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         g''''16
+                                        - \marcato
                                         g''''16
+                                        - \marcato
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         g''''16
@@ -326,7 +349,9 @@
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 3
                                         g''''32
+                                        - \marcato
                                         g''''32
+                                        - \marcato
                                         \revert Staff.Stem.stemlet-length
                                         g''''32
                                         ]
@@ -338,6 +363,8 @@
                                 {
                                     g''''4
                                     g''''16
+                                    _ \f
+                                    _ \>
                                     ~
                                 }
                                 g''''4.
@@ -361,6 +388,7 @@
                                     [
                                     \revert Staff.Stem.stemlet-length
                                     g''''8
+                                    _ \mf
                                     ]
                                     ~
                                 }
@@ -372,8 +400,10 @@
                                     {
                                         \override Staff.Stem.stemlet-length = 0.75
                                         g''''16
+                                        - \marcato
                                         [
                                         g''''16
+                                        - \marcato
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         g''''16
@@ -382,6 +412,7 @@
                                     g''''16
                                     \revert Staff.Stem.stemlet-length
                                     g''''8
+                                    _ \mf
                                     ]
                                     ~
                                 }
@@ -393,8 +424,10 @@
                                     {
                                         \override Staff.Stem.stemlet-length = 0.75
                                         g''''16
+                                        - \marcato
                                         [
                                         g''''16
+                                        - \marcato
                                         g''''16
                                         ~
                                     }
@@ -413,8 +446,10 @@
                                     {
                                         \override Staff.Stem.stemlet-length = 0.75
                                         g''''32
+                                        - \marcato
                                         [
                                         g''''32
+                                        - \marcato
                                         \revert Staff.Stem.stemlet-length
                                         g''''32
                                         ]
@@ -429,8 +464,10 @@
                                     {
                                         \override Staff.Stem.stemlet-length = 0.75
                                         g''''32
+                                        - \marcato
                                         [
                                         g''''32
+                                        - \marcato
                                         \revert Staff.Stem.stemlet-length
                                         g''''32
                                         ]
@@ -450,7 +487,9 @@
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         g''''16
+                                        - \marcato
                                         g''''16
+                                        - \marcato
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         g''''16
@@ -462,7 +501,9 @@
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 3
                                         g''''32
+                                        - \marcato
                                         g''''32
+                                        - \marcato
                                         \revert Staff.Stem.stemlet-length
                                         g''''32
                                         ]
@@ -474,6 +515,7 @@
                                 {
                                     g''''4
                                     g''''16
+                                    _ \p
                                     ~
                                 }
                                 g''''4.
@@ -487,7 +529,9 @@
                                     \times 2/3
                                     {
                                         g''''16
+                                        - \marcato
                                         g''''16
+                                        - \marcato
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         g''''16
@@ -527,14 +571,17 @@
                                 g''''16
                                 [
                                 g''''16
+                                _ \mp
                                 ]
                                 ~
                                 g''''4.
                                 \times 2/3
                                 {
-                                    g''''16
+                                    <af''' g''''>16
+                                    - \marcato
                                     [
-                                    g''''16
+                                    <af''' g''''>16
+                                    - \marcato
                                     g''''16
                                     ]
                                     ~
@@ -547,11 +594,15 @@
                                 {
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 2
-                                    g''''16
-                                    g''''16
+                                    <af''' g''''>16
+                                    - \marcato
+                                    _ \ffff
+                                    <af''' g''''>16
+                                    - \marcato
                                     \set stemLeftBeamCount = 2
                                     \set stemRightBeamCount = 1
                                     g''''16
+                                    _ \mp
                                     ~
                                 }
                                 g''''16
@@ -562,8 +613,11 @@
                                 [
                                 \times 2/3
                                 {
-                                    g''''16
-                                    g''''16
+                                    <af''' g''''>16
+                                    - \marcato
+                                    _ \ffff
+                                    <af''' g''''>16
+                                    - \marcato
                                     \set stemLeftBeamCount = 2
                                     \set stemRightBeamCount = 1
                                     g''''16
@@ -580,9 +634,13 @@
                                 {
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 3
+                                    <af''' g''''>32
+                                    - \marcato
+                                    _ \ffff
+                                    <af''' g''''>32
+                                    - \marcato
                                     g''''32
-                                    g''''32
-                                    g''''32
+                                    _ \p
                                     ]
                                     ~
                                 }
@@ -597,15 +655,19 @@
                                 g''''8.
                                 [
                                 g''''8.
+                                _ \pp
                                 ]
                                 ~
                                 g''''4
                                 \times 2/3
                                 {
-                                    g''''16
+                                    <af''' g''''>16
+                                    - \marcato
                                     [
-                                    g''''16
-                                    g''''16
+                                    <af''' g''''>16
+                                    - \marcato
+                                    <af''' g''''>16
+                                    - \marcato
                                     ]
                                     ~
                                 }
@@ -687,135 +749,1105 @@
                             \sustainOff
                             ]
                         }
+                        \once \override TupletBracket.stencil = ##f
+                        \once \override TupletNumber.stencil = ##f
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 6/5
                         {
+                            \once \override TupletBracket.stencil = ##f
+                            \once \override TupletNumber.stencil = ##f
                             \times 2/3
                             {
-                                c'16
-                                c'16
-                                c'16
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Staff.OttavaBracket.staff-padding = 7
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(42)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                \ottava -2
+                                \override Flag.stencil = ##f
+                                \override Staff.Stem.direction = #UP
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
+                                ^ \ffff
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(42)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(42)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
                             }
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r8
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r16
                         }
+                        \once \override TupletBracket.stencil = ##f
+                        \once \override TupletNumber.stencil = ##f
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 6/5
                         {
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r4
+                            \once \override TupletBracket.stencil = ##f
+                            \once \override TupletNumber.stencil = ##f
                             \times 2/3
                             {
-                                c'32
-                                c'32
-                                c'32
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(42)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
+                                ^ \ffff
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(42)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(42)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
+                                \revert Staff.Flag.stencil
+                                \revert Staff.Stem.direction
                             }
                         }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \once \override Rest.transparent = ##t
                         \once \override Voice.Dots.transparent = ##t
                         r2.
+                        \once \override TupletBracket.stencil = ##f
+                        \once \override TupletNumber.stencil = ##f
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 6/5
                         {
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r16
+                            \once \override TupletBracket.stencil = ##f
+                            \once \override TupletNumber.stencil = ##f
                             \times 2/3
                             {
-                                c'16
-                                c'16
-                                c'16
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(25)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                \override Flag.stencil = ##f
+                                \override Staff.Stem.direction = #UP
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
+                                ^ \ffff
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(25)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(25)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
                             }
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r16
+                            \once \override TupletBracket.stencil = ##f
+                            \once \override TupletNumber.stencil = ##f
                             \times 2/3
                             {
-                                c'32
-                                c'32
-                                c'32
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(25)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
+                                ^ \ffff
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(25)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(25)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
                             }
                         }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         r4.
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \once \override Rest.transparent = ##t
                         \once \override Voice.Dots.transparent = ##t
                         r2.
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \once \override Rest.transparent = ##t
                         \once \override Voice.Dots.transparent = ##t
                         r2.
+                        \once \override TupletBracket.stencil = ##f
+                        \once \override TupletNumber.stencil = ##f
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 6/5
                         {
+                            \once \override TupletBracket.stencil = ##f
+                            \once \override TupletNumber.stencil = ##f
                             \times 2/3
                             {
-                                c'16
-                                c'16
-                                c'16
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(25)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
+                                ^ \ffff
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(25)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(25)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
+                                \revert Staff.Flag.stencil
+                                \revert Staff.Stem.direction
                             }
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r16
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r8
                         }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         r4.
+                        \once \override TupletBracket.stencil = ##f
+                        \once \override TupletNumber.stencil = ##f
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 6/5
                         {
+                            \once \override TupletBracket.stencil = ##f
+                            \once \override TupletNumber.stencil = ##f
                             \times 2/3
                             {
-                                c'16
-                                c'16
-                                c'16
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                \override Flag.stencil = ##f
+                                \override Staff.Stem.direction = #UP
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
+                                ^ \ffff
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
                             }
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r8
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r16
                         }
+                        \once \override TupletBracket.stencil = ##f
+                        \once \override TupletNumber.stencil = ##f
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 6/5
                         {
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r4
+                            \once \override TupletBracket.stencil = ##f
+                            \once \override TupletNumber.stencil = ##f
                             \times 2/3
                             {
-                                c'32
-                                c'32
-                                c'32
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
+                                ^ \ffff
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
                             }
                         }
+                        \once \override TupletBracket.stencil = ##f
+                        \once \override TupletNumber.stencil = ##f
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 6/5
                         {
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r4
+                            \once \override TupletBracket.stencil = ##f
+                            \once \override TupletNumber.stencil = ##f
                             \times 2/3
                             {
-                                c'32
-                                c'32
-                                c'32
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
+                                ^ \ffff
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
                             }
                         }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         r4.
+                        \once \override TupletBracket.stencil = ##f
+                        \once \override TupletNumber.stencil = ##f
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 6/5
                         {
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r16
+                            \once \override TupletBracket.stencil = ##f
+                            \once \override TupletNumber.stencil = ##f
                             \times 2/3
                             {
-                                c'16
-                                c'16
-                                c'16
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
+                                ^ \ffff
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
                             }
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r16
+                            \once \override TupletBracket.stencil = ##f
+                            \once \override TupletNumber.stencil = ##f
                             \times 2/3
                             {
-                                c'32
-                                c'32
-                                c'32
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
+                                ^ \ffff
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >32
+                                - \marcato
                             }
                         }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         r4.
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         r4.
+                        \once \override TupletBracket.stencil = ##f
+                        \once \override TupletNumber.stencil = ##f
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 6/5
                         {
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r8
+                            \once \override TupletBracket.stencil = ##f
+                            \once \override TupletNumber.stencil = ##f
                             \times 2/3
                             {
-                                c'16
-                                c'16
-                                c'16
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
+                                ^ \ffff
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
+                                \once \override NoteHead.X-offset = 0
+                                \once \override Staff.Accidental.stencil = ##f
+                                \once \override Staff.Glissando.thickness = #8.25
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                <
+                                    \tweak style #'la
+                                    a,,,,
+                                    \tweak style #'la
+                                    b,,,,
+                                    \tweak style #'la
+                                    c,,,
+                                    \tweak style #'la
+                                    d,,,
+                                    \tweak style #'la
+                                    e,,,
+                                    \tweak style #'la
+                                    f,,,
+                                    \tweak style #'la
+                                    g,,,
+                                    \tweak style #'la
+                                    a,,,
+                                >16
+                                - \marcato
+                                \ottava 0
+                                \revert Staff.Flag.stencil
+                                \revert Staff.Stem.direction
                             }
+                            \once \override Dots.transparent = ##t
+                            \once \override Rest.transparent = ##t
                             r16
                         }
                     }
