@@ -218,7 +218,7 @@ afterGraceFraction = #(cons 15 16)
         %          (ly:tuplet-bracket::print grob)))
         \override TupletBracket.direction = #UP
 
-        % \override VoltaBracketSpanner.padding = 8
+        % \override VoltaBracketSpanner.padding = 5
     }
 
     \context {

@@ -40,6 +40,32 @@ def capullos_score(time_signatures):
     return score
 
 
+# immutables
+
+change_to_rh = eval(
+    """abjad.LilyPondLiteral(
+        r'\change Staff = "piano 1 staff"', site="before"
+    )"""
+)
+
+change_to_lh = eval(
+    """abjad.LilyPondLiteral(
+        r'\change Staff = "piano 3 staff"', site="before"
+    )"""
+)
+
+revert_to_rh = eval(
+    """abjad.LilyPondLiteral(
+        r'\change Staff = "piano 1 staff"', site="absolute_after"
+    )"""
+)
+
+revert_to_lh = eval(
+    """abjad.LilyPondLiteral(
+        r'\change Staff = "piano 3 staff"', site="absolute_after"
+    )"""
+)
+
 # notation tools
 
 
@@ -47,18 +73,9 @@ def connect_notes_to_upper_staff(selector=trinton.pleaves(), stem_lengths=28):
     def connect_notes(argument):
         selections = selector(argument)
 
-        # r"\override Stem.cross-staff = ##t",
-        #             r"\once \override Stem.Y-extent = #'(0 . 0)",
-        #             r"\once \override Stem.details.lengths = #'(33)",
-        #             r"\once \override Flag.cross-staff = ##t",
-        #             r"\once \override Flag.Y-extent = #'(0 . 0)",
-        #             r"\once \override StaffGroup.Flag.Y-offset = 33",
-
         opening_list = [
             r"\override Flag.stencil = ##f",
             r"\override Staff.Stem.direction = #UP",
-            # r"\override Stem.cross-staff = ##t",
-            # r"\override Stem.Y-extent = #'(0 . 0)",
         ]
 
         closing_list = [
@@ -84,7 +101,8 @@ def connect_notes_to_upper_staff(selector=trinton.pleaves(), stem_lengths=28):
 
         else:
             for leaf, stem_length in zip(
-                abjad.select.leaves(selections), stem_lengths, pitched=True
+                abjad.select.leaves(selections, pitched=True),
+                stem_lengths,
             ):
                 literal = abjad.LilyPondLiteral(
                     [

@@ -153,3 +153,32 @@ def punctuation_rhythm(stage=1, denominator=16, index=0, extra_counts=[0]):
         return components
 
     return rhythm
+
+
+vectors = sieve.get_boolean_vector(total_length=100)
+
+sieve_talea = []
+
+false_counter = 1
+
+for i, vector in enumerate(vectors):
+    cursor = i + 1
+    cursor = cursor % len(vectors)
+    next_vector = vectors[cursor]
+
+    if next_vector == 0:
+        false_counter += 1
+
+    if vector == 0 and next_vector == 1:
+        note_value = false_counter
+        sieve_talea.append(note_value)
+        false_counter = 1
+
+    if vector == 1 and next_vector == 1:
+        false_counter = 1
+        note_value = false_counter
+        sieve_talea.append(note_value)
+
+
+def return_sieve_talea(index=0):
+    return trinton.rotated_sequence(sieve_talea, index % len(sieve_talea))

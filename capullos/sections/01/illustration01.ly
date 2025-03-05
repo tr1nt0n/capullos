@@ -19,61 +19,76 @@
             \time 6/8
             s1 * 3/4
             \noBreak
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
             \noBreak
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
             \noBreak
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
             \break
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
             \noBreak
+            \noPageBreak
             \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 4/16
             s1 * 1/4
             \noBreak
+            \noPageBreak
             \time 6/8
             s1 * 3/4
             \noBreak
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
             \break
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
             \noBreak
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
             \noBreak
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
             \noBreak
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
             \break
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
             \noBreak
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
             \noBreak
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
             \noBreak
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 6/8
             s1 * 3/4
