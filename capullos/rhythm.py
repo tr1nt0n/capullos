@@ -182,3 +182,113 @@ for i, vector in enumerate(vectors):
 
 def return_sieve_talea(index=0):
     return trinton.rotated_sequence(sieve_talea, index % len(sieve_talea))
+
+
+numerator_list = []
+
+true_counter = 1
+
+false_counter = 1
+
+for i, vector in enumerate(vectors):
+    cursor = i + 1
+    cursor = cursor % len(vectors)
+    next_vector = vectors[cursor]
+
+    if vector == 1 and next_vector == 1:
+        true_counter += 1
+
+    if vector == 1 and next_vector == 0:
+        true_counter += 1
+        numerator = true_counter
+        numerator_list.append(numerator)
+        true_counter = 1
+
+    if vector == 0 and next_vector == 0:
+        false_counter += 1
+
+    if vector == 0 and next_vector == 1:
+        false_counter += 1
+        numerator = false_counter
+        numerator_list.append(numerator)
+        false_counter = 1
+
+
+def card_rhythm():
+    def make_rhythms(durations):
+        phrases = abjad.sequence.partition_by_counts(
+            sequence=durations,
+            counts=numerator_list,
+            overhang=True,
+        )
+
+        container = abjad.Container()
+
+        for phrase in phrases:
+            last_module = phrase[-1]
+            all_except_last_module = abjad.select.exclude(phrase, [-1])
+
+            rhythm_selections = rmakers.note(all_except_last_module)
+            container.extend(abjad.select.components(rhythm_selections))
+
+            last_numerator = int(last_module.numerator)
+            last_denominator = int(last_module.denominator)
+            meter = abjad.Meter(last_module)
+
+            beat_regions = []
+
+            if last_numerator % 3 == 0 and last_numerator != 15:
+                regions = []
+                if meter.is_compound is True:
+                    range_limit = int(last_numerator / 3)
+                    for _ in range(0, range_limit):
+                        regions.append(abjad.Duration((3, last_denominator)))
+
+                else:
+                    for _ in range(0, last_numerator):
+                        regions.append(abjad.Duration((1, last_denominator)))
+
+                beat_regions.append(regions)
+
+            if last_numerator % 2 == 0 and last_numerator % 3 != 0:
+                regions = []
+                for _ in range(0, last_numerator):
+                    regions.append(abjad.Duration((1, last_denominator)))
+
+                beat_regions.append(regions)
+
+            def is_prime(n):
+                for i in range(2, n):
+                    if (n % i) == 0:
+                        return False
+                    else:
+                        return True
+
+            if (
+                is_prime(last_numerator) is True
+                and last_numerator > 3
+                and last_numerator % 9 != 0
+            ):
+                regions = []
+                regions.append(abjad.Duration((3, last_denominator)))
+
+                for _ in range(0, last_numerator):
+                    if sum(regions) == last_numerator / last_denominator:
+                        pass
+                    else:
+                        regions.append(abjad.Duration((2, last_denominator)))
+
+                regions = trinton.rotated_sequence(regions, 1)
+
+                beat_regions.append(regions)
+
+            rhythm_selections = rmakers.note(beat_regions[0][0:-1])
+            notes = abjad.select.components(rhythm_selections)
+            container.extend(notes)
+
+            container.append(abjad.Rest(written_duration=beat_regions[0][-1]))
+
+        components = abjad.mutate.eject_contents(container)
+        return components
+
+    return make_rhythms

@@ -777,6 +777,7 @@
                                 \once \override Staff.Accidental.stencil = ##f
                                 \once \override Staff.Glissando.thickness = #8.25
                                 \once \override Staff.OttavaBracket.staff-padding = 7
+                                \once \override DynamicText.X-extent = #'(-0.5 . -0.5)
                                 \once \override Stem.cross-staff = ##t
                                 \once \override Stem.Y-extent = #'(0 . 0)
                                 \once \override Stem.details.lengths = #'(42)

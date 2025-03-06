@@ -9,6 +9,7 @@ import quicktions
 from itertools import cycle
 from capullos import pitch
 from capullos import rhythm
+from capullos import ts
 from abjadext import rmakers
 
 # score
@@ -67,6 +68,112 @@ revert_to_lh = eval(
 )
 
 # notation tools
+
+
+def attach_bowing_spanners(selector=trinton.logical_ties(pitched=True)):
+    def attach_bowing(argument):
+        selections = selector(argument)
+
+        phrases = abjad.select.group_by_contiguity(selections)
+
+        tie_cursor = 0
+
+        for phrase in phrases:
+            spanners = []
+            for i, tie in enumerate(phrase):
+                previous_numerator = ts.numerator_list[
+                    i - 1 + tie_cursor % len(ts.numerator_list)
+                ]
+                numerator = ts.numerator_list[i + tie_cursor % len(ts.numerator_list)]
+
+                if i % 2 == 0:
+                    if previous_numerator > numerator:
+                        new_numerator = previous_numerator - numerator
+
+                    else:
+                        new_numerator = numerator
+
+                    markup_string = rf"""\markup \concat {{ \center-column {{ \line {{ \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 }} \line {{ \upright \fraction {new_numerator} 6 }} }} }}"""
+
+                else:
+                    if previous_numerator < numerator:
+                        new_numerator = previous_numerator + numerator
+
+                    else:
+                        new_numerator = numerator
+
+                    markup_string = rf"""\markup \concat {{ \center-column {{ \line {{ \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 }} \line {{ \upright \fraction {new_numerator} 6 }} }} }}"""
+
+                # abjad.StartTextSpan(
+                #     command=r"\startTextSpan" + command,
+                #     left_text=markups[0],
+                #     right_text=markups[1],
+                #     style=style,
+                #     right_padding=r_padding,
+                # )
+
+            tie_cursor += len(abjad.select.logical_ties(phrase))
+
+    return attach_bowing
+
+
+def make_cluster_chords(selector=trinton.logical_ties(pitched=True)):
+    def chord_clusters(argument):
+        selections = selector(argument)
+
+        pitch_list = []
+
+        for selection in selections:
+            pitch = abjad.select.leaf(selection, 0).written_pitch
+
+            accidental = pitch.accidental
+            accidental_name = accidental.name
+            if accidental_name == "sharp":
+                abjad.mutate.transpose(selection, -1)
+                abjad.iterpitches.respell_with_flats(selection)
+            if accidental_name == "flat":
+                abjad.mutate.transpose(selection, 1)
+                abjad.iterpitches.respell_with_sharps(selection)
+
+            new_pitch = abjad.select.leaf(selection, 0).written_pitch
+
+            diatonic_interval_set = ["m2", "M2", "M2", "M2", "m2", "M2", "M2"]
+
+            _pitch_class_to_interval_cursor = {
+                "c": 0,
+                "b": 1,
+                "a": 2,
+                "g": 3,
+                "f": 4,
+                "e": 5,
+                "d": 6,
+            }
+
+            pitch_class = new_pitch.pitch_class
+            pitch_class_name = pitch_class.name
+            interval_set = trinton.rotated_sequence(
+                diatonic_interval_set, _pitch_class_to_interval_cursor[pitch_class_name]
+            )
+            interval_set = interval_set[0:4]
+
+            def make_scale(tonic, intervals):
+                pitches = []
+                pitch = abjad.NamedPitch(tonic)
+                pitches.append(pitch)
+                for interval in intervals:
+                    pitch = pitch - interval
+                    pitches.append(pitch)
+                return pitches
+
+            chord = make_scale(tonic=new_pitch.name, intervals=interval_set)
+            chord = [_.name for _ in chord]
+            pitch_list.append(chord)
+
+        handler = evans.PitchHandler(pitch_list=pitch_list)
+
+        handler(selections)
+
+    return chord_clusters
 
 
 def connect_notes_to_upper_staff(selector=trinton.pleaves(), stem_lengths=28):

@@ -458,7 +458,11 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
-                r"\once \override Staff.OttavaBracket.staff-padding = 7", site="before"
+                [
+                    r"\once \override Staff.OttavaBracket.staff-padding = 7",
+                    r"\once \override DynamicText.X-extent = #'(-0.5 . -0.5)",
+                ],
+                site="before",
             ),
         ],
         selector=trinton.select_leaves_by_index([0], pitched=True),
