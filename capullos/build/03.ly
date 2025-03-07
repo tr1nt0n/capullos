@@ -61,6 +61,19 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/8
             s1 * 1/4
+            - \tweak padding #19
+            - \abjad-solid-line-with-arrow
+            - \tweak bound-details.left.text \markup \concat { \fontsize #5 { Rit. } \hspace #0.5 }
+            - \tweak bound-details.right.text \markup {
+              \raise #0 \with-dimensions-from \null
+              \override #'(font-size . 5.5)
+              \concat {
+              [\abjad-metric-modulation #3 #1 #3 #0 #'(1 . 1)]
+                  \hspace #1
+                  \abjad-metronome-mark-markup #3 #0 #2 #" 48 " 
+              }
+            }
+            \startTextSpan
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/8
             s1 * 1/4
@@ -70,18 +83,33 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/8
             s1 * 1/4
+            \stopTextSpan
             \time 5/8
             s1 * 5/8
             \time 2/8
             s1 * 1/4
             \time 3/8
             s1 * 3/8
+            - \tweak padding #21
+            - \abjad-solid-line-with-arrow
+            - \tweak bound-details.left.text \markup \concat { \fontsize #5 { Accel. } \hspace #0.5 }
+            - \tweak bound-details.right.text \markup {
+              \raise #0 \with-dimensions-from \null
+              \override #'(font-size . 5.5)
+              \concat {
+              [\abjad-metric-modulation-tuplet-lhs #4 #0 #8 #9 #3 #0 #'(1 . 1)]
+                  \hspace #1
+                  \abjad-metronome-mark-markup #3 #0 #2 #" 108 " 
+              }
+            }
+            \startTextSpan
             \time 2/8
             s1 * 1/4
             \time 3/8
             s1 * 3/8
             \time 2/4
             s1 * 1/2
+            \stopTextSpan
             \time 2/8
             s1 * 1/4
             \once \override Score.TimeSignature.stencil = ##f
@@ -1131,20 +1159,130 @@
                         }
                         s1 * 1/4
                         s1 * 1/4
+                        \times 2/3
+                        {
+                            c'8
+                            [
+                            c'8
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            c'8
+                            ]
+                        }
+                        c'4
+                        c'4
+                        \times 2/3
+                        {
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 1
+                            c'8
+                            [
+                            c'8
+                            c'8
+                        }
+                        c'16
+                        c'16
+                        c'16
+                        \set stemLeftBeamCount = 2
+                        \set stemRightBeamCount = 1
+                        c'16
+                        ]
                         s1 * 1/4
-                        s1 * 1/2
+                        \set stemLeftBeamCount = 1
+                        \set stemRightBeamCount = 1
+                        c'8
+                        [
+                        \set stemLeftBeamCount = 1
+                        \set stemRightBeamCount = 1
+                        c'8
+                        ]
                         s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 1/4
-                        s1 * 5/8
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 10/9
+                        {
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 2
+                            c'16.
+                            [
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 1
+                            c'16.
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 4
+                            c'64
+                            c'64
+                            c'64
+                            c'64
+                            c'64
+                            \set stemLeftBeamCount = 4
+                            \set stemRightBeamCount = 1
+                            c'64
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 2
+                            c'16.
+                            c'64.
+                            \set stemLeftBeamCount = 4
+                            \set stemRightBeamCount = 1
+                            c'64.
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 4
+                            c'64.
+                            c'64.
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 1
+                            c'16.
+                            ]
+                        }
                         s1 * 1/4
                         s1 * 3/8
-                        s1 * 1/4
-                        s1 * 3/8
-                        s1 * 1/2
-                        s1 * 1/4
+                        \times 4/6
+                        {
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 2
+                            c'16
+                            [
+                            c'16
+                            c'16
+                            c'16
+                            c'16
+                            c'16
+                        }
+                        c'8.
+                        c'32
+                        c'32
+                        c'32
+                        c'32
+                        c'32
+                        \set stemLeftBeamCount = 3
+                        \set stemRightBeamCount = 1
+                        c'32
+                        ]
+                        \times 4/6
+                        {
+                            c'4
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 2
+                            c'16
+                            [
+                            c'16
+                            c'16
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 1
+                            c'16
+                            ]
+                            c'4
+                        }
+                        \set stemLeftBeamCount = 1
+                        \set stemRightBeamCount = 1
+                        c'8
+                        [
+                        \times 2/3
+                        {
+                            c'16
+                            c'16
+                            c'16
+                            ]
+                        }
                         s1 * 1/4
                         s1 * 3/4
                     }

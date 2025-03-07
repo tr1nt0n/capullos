@@ -292,3 +292,57 @@ def card_rhythm():
         return components
 
     return make_rhythms
+
+
+def gesture_rhythms(stage=1, index=0, nested_selector=punctuation_selector()):
+    new_numerator_list = trinton.remove_adjacent(numerator_list)
+    new_numerator_list = trinton.rotated_sequence(
+        new_numerator_list, index % len(new_numerator_list)
+    )
+
+    def make_rhythms(durations):
+        tuplets = []
+
+        for item in new_numerator_list:
+            tuplet = []
+            for _ in range(0, item):
+                tuplet.append(1)
+            tuplet = tuple(tuplet)
+            tuplets.append(tuplet)
+
+        container = abjad.Container()
+
+        rhythm_selections = rmakers.tuplet(durations, tuplets)
+        container.extend(rhythm_selections)
+
+        if stage > 1:
+            nested_tuplets = []
+            for item in new_numerator_list:
+                nested_tuplet = []
+                if item < 3:
+                    item = item * 2
+                for _ in range(0, item):
+                    nested_tuplet.append(1)
+                nested_tuplet = tuple(nested_tuplet)
+                nested_tuplets.append(nested_tuplet)
+
+            tupleted_ties = nested_selector(container)
+
+            for tie, tuplet in zip(tupleted_ties, itertools.cycle(nested_tuplets)):
+                tie_duration = abjad.get.duration(tie, preprolated=True)
+                rhythm_selections = rmakers.tuplet([tie_duration], [tuplet])
+
+                abjad.mutate.replace(tie, rhythm_selections)
+
+        rmakers.rewrite_dots(abjad.select.tuplets(container))
+        rmakers.trivialize(abjad.select.tuplets(container))
+        rmakers.rewrite_rest_filled(abjad.select.tuplets(container))
+        rmakers.rewrite_sustained(abjad.select.tuplets(container))
+        rmakers.extract_trivial(abjad.select.tuplets(container))
+        trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
+
+        components = abjad.mutate.eject_contents(container)
+
+        return components
+
+    return make_rhythms

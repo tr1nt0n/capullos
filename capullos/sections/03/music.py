@@ -353,6 +353,114 @@ for measure in [1, 4, 6, 9, 12, 15]:
         voice=score["piano 3 voice"],
     )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (18, 21)),
+    evans.RhythmHandler(rhythm.gesture_rhythms(stage=1)),
+    trinton.rewrite_meter_command(),
+    trinton.respell_tuplets_command(rewrite_brackets=False),
+    voice=score["piano 3 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (23,)),
+    evans.RhythmHandler(rhythm.gesture_rhythms(stage=1, index=4)),
+    trinton.rewrite_meter_command(),
+    trinton.respell_tuplets_command(rewrite_brackets=False),
+    voice=score["piano 3 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (25,)),
+    evans.RhythmHandler(
+        rhythm.gesture_rhythms(
+            stage=2,
+            index=5,
+            nested_selector=trinton.select_logical_ties_by_index([2, 4], pitched=True),
+        )
+    ),
+    trinton.rewrite_meter_command(),
+    trinton.respell_tuplets_command(rewrite_brackets=False),
+    voice=score["piano 3 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (28, 31)),
+    evans.RhythmHandler(
+        rhythm.gesture_rhythms(
+            stage=2,
+            index=5,
+            nested_selector=trinton.select_logical_ties_by_index(
+                [7, 9, 12], pitched=True
+            ),
+        )
+    ),
+    trinton.rewrite_meter_command(),
+    trinton.respell_tuplets_command(rewrite_brackets=False),
+    voice=score["piano 3 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (18, 31)),
+    # trinton.annotate_leaves_locally(selector=trinton.pleaves()),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.StartBeam(),
+                abjad.StopBeam(),
+            ]
+        ),
+        selector=trinton.select_leaves_by_index(
+            [0, 2, 5, 11, 12, 13, 14, 27, 28, 40, 42, 45, 47, -1], pitched=True
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.BeamCount(left=1, right=1),
+            abjad.BeamCount(left=1, right=1),
+            abjad.BeamCount(left=2, right=1),
+            abjad.BeamCount(left=1, right=1),
+            abjad.BeamCount(left=1, right=1),
+            abjad.BeamCount(left=1, right=2),
+            abjad.BeamCount(left=2, right=1),
+            abjad.BeamCount(left=1, right=4),
+            abjad.BeamCount(left=4, right=1),
+            abjad.BeamCount(left=1, right=2),
+            abjad.BeamCount(left=4, right=1),
+            abjad.BeamCount(left=1, right=4),
+            abjad.BeamCount(left=2, right=1),
+            abjad.BeamCount(left=1, right=2),
+            abjad.BeamCount(left=3, right=1),
+            abjad.BeamCount(left=1, right=2),
+            abjad.BeamCount(left=2, right=1),
+            abjad.BeamCount(left=1, right=1),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                2,
+                5,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                21,
+                22,
+                24,
+                25,
+                27,
+                28,
+                40,
+                42,
+                45,
+                47,
+            ],
+            pitched=True,
+        ),
+    ),
+    voice=score["piano 3 voice"],
+)
+
 # globals
 
 trinton.fermata_measures(
@@ -504,40 +612,74 @@ trinton.make_music(
 )
 
 
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (9, 11)),
-#     trinton.spanner_command(
-#         strings=[
-#             r"\markup \fontsize #5 { Rit. }",
-#             library.return_metronome_markup(
-#                 note_value="quarter",
-#                 tempo=52,
-#                 padding=0,
-#                 # metric_modulation=abjad.MetricModulation(
-#                 #     left_rhythm=abjad.Tuplet("5:4", r"c'16"),
-#                 #     right_rhythm=abjad.Note("c'16"),
-#                 # ),
-#                 site="after",
-#                 hspace=None,
-#                 string_only=True,
-#             ),
-#         ],
-#         selector=trinton.select_leaves_by_index([0, -1]),
-#         style="solid-line-with-arrow",
-#         padding=8.5,
-#         tweaks=None,
-#         right_padding=None,
-#         direction=None,
-#         full_string=True,
-#         command="",
-#         end_hook=False,
-#         end_hook_style="dashed-line-with-hook",
-#         end_hook_right_padding=1.5,
-#         tag=None,
-#     ),
-#     voice=score["Global Context"],
-# )
-#
+trinton.make_music(
+    lambda _: trinton.select_target(_, (21, 24)),
+    trinton.spanner_command(
+        strings=[
+            r"\markup \fontsize #5 { Rit. }",
+            library.return_metronome_markup(
+                note_value="eighth",
+                tempo=48,
+                padding=0,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Note("c'8."),
+                    right_rhythm=abjad.Note("c'8"),
+                ),
+                site="after",
+                hspace=None,
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        style="solid-line-with-arrow",
+        padding=19,
+        tweaks=None,
+        right_padding=None,
+        direction=None,
+        full_string=True,
+        command="",
+        end_hook=False,
+        end_hook_style="dashed-line-with-hook",
+        end_hook_right_padding=1.5,
+        tag=None,
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (27, 30)),
+    trinton.spanner_command(
+        strings=[
+            r"\markup \fontsize #5 { Accel. }",
+            library.return_metronome_markup(
+                note_value="eighth",
+                tempo=108,
+                padding=0,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Tuplet("9:8", "c'16"),
+                    right_rhythm=abjad.Note("c'8"),
+                ),
+                site="after",
+                hspace=None,
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        style="solid-line-with-arrow",
+        padding=21,
+        tweaks=None,
+        right_padding=None,
+        direction=None,
+        full_string=True,
+        command="",
+        end_hook=False,
+        end_hook_style="dashed-line-with-hook",
+        end_hook_right_padding=1.5,
+        tag=None,
+    ),
+    voice=score["Global Context"],
+)
+
 # for measure in [1, 2, 3, 4, 5, 6]:
 #     trinton.make_music(
 #         lambda _: trinton.select_target(_, (measure,)),
