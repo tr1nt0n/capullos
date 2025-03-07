@@ -70,51 +70,27 @@ revert_to_lh = eval(
 # notation tools
 
 
-def attach_bowing_spanners(selector=trinton.logical_ties(pitched=True)):
-    def attach_bowing(argument):
-        selections = selector(argument)
+def return_bowing_spanner_markups(index=0):
+    markup_list = []
 
-        phrases = abjad.select.group_by_contiguity(selections)
+    new_numerator_list = trinton.remove_adjacent(ts.numerator_list)
 
-        tie_cursor = 0
+    for i, numerator in enumerate(new_numerator_list):
+        cursor = i + 1
+        next_numerator = new_numerator_list[cursor % len(new_numerator_list)]
 
-        for phrase in phrases:
-            spanners = []
-            for i, tie in enumerate(phrase):
-                previous_numerator = ts.numerator_list[
-                    i - 1 + tie_cursor % len(ts.numerator_list)
-                ]
-                numerator = ts.numerator_list[i + tie_cursor % len(ts.numerator_list)]
+        if next_numerator > numerator:
+            bowing_direction = "##xe612"
 
-                if i % 2 == 0:
-                    if previous_numerator > numerator:
-                        new_numerator = previous_numerator - numerator
+        else:
+            bowing_direction = "##xe610"
 
-                    else:
-                        new_numerator = numerator
+        markup_string = rf"""\markup \concat {{ \center-column {{ \line {{ \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char {bowing_direction} }} \line {{ \override #'(font-size . 1) \upright \fraction {numerator} 6 }} }} }}"""
 
-                    markup_string = rf"""\markup \concat {{ \center-column {{ \line {{ \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 }} \line {{ \upright \fraction {new_numerator} 6 }} }} }}"""
+        markup_list.append(markup_string)
+    markup_list = trinton.rotated_sequence(markup_list, index)
 
-                else:
-                    if previous_numerator < numerator:
-                        new_numerator = previous_numerator + numerator
-
-                    else:
-                        new_numerator = numerator
-
-                    markup_string = rf"""\markup \concat {{ \center-column {{ \line {{ \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 }} \line {{ \upright \fraction {new_numerator} 6 }} }} }}"""
-
-                # abjad.StartTextSpan(
-                #     command=r"\startTextSpan" + command,
-                #     left_text=markups[0],
-                #     right_text=markups[1],
-                #     style=style,
-                #     right_padding=r_padding,
-                # )
-
-            tie_cursor += len(abjad.select.logical_ties(phrase))
-
-    return attach_bowing
+    return markup_list
 
 
 def make_cluster_chords(selector=trinton.logical_ties(pitched=True)):
