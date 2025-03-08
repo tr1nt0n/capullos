@@ -67,3 +67,39 @@ def sieve_transposition(
             previous_pitch = first_leaf.written_pitch
 
     return transposition
+
+
+def make_sieve_chords(index=0, selector=rhythm.punctuation_selector()):
+    def make_chords(argument):
+        selections = selector(argument)
+
+        interval_sets = abjad.sequence.partition_by_counts(
+            sequence=interval_list,
+            counts=[4 for _ in range(0, 100)],
+            overhang=True,
+        )
+
+        interval_sets = trinton.rotated_sequence(interval_sets, index)
+
+        for selection, interval_set in zip(selections, interval_sets):
+            selection_pitch = abjad.select.leaf(selection, 0).written_pitch.number
+
+            chord_list = [selection_pitch]
+
+            for i, interval in enumerate(interval_set):
+                if i != 0:
+                    previous_interval = interval_set[i - 1]
+                    new_interval = interval + previous_interval
+
+                else:
+                    new_interval = selection_pitch + interval
+
+                new_note = selection_pitch + new_interval
+
+                chord_list.append(new_note)
+
+            handler = evans.PitchHandler(pitch_list=[chord_list])
+
+            handler(selection)
+
+    return make_chords

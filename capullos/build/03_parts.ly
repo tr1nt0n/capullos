@@ -299,8 +299,8 @@
                         \glissando
                         - \tweak padding #9
                         - \abjad-solid-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } } \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } }
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 4 6 } } }
                         \startTextSpan
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
@@ -373,8 +373,8 @@
                         \glissando
                         - \tweak padding #11
                         - \abjad-solid-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } }
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 4 6 } } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } }
                         \startTextSpan
                         \<
                         \once \override NoteHead.X-offset = 0
@@ -482,8 +482,8 @@
                         \glissando
                         - \tweak padding #13.5
                         - \abjad-solid-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 4 6 } } } \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } }
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } }
                         \startTextSpan
                         - \tweak stencil #constante-hairpin
                         \<
@@ -600,7 +600,7 @@
                         \glissando
                         - \tweak padding #10
                         - \abjad-solid-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 6 6 } } } \hspace #0.5 }
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } } \hspace #0.5 }
                         - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } }
                         \startTextSpan
                         \once \override NoteHead.X-offset = 0
@@ -726,7 +726,7 @@
                         - \tweak padding #7
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } }
+                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 4 6 } } }
                         \startTextSpan
                         - \tweak stencil #constante-hairpin
                         \<
@@ -900,7 +900,7 @@
                         - \tweak padding #13
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 4 6 } } }
+                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } }
                         \startTextSpan
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
@@ -970,8 +970,8 @@
                         \>
                         - \tweak padding #10.5
                         - \abjad-solid-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } } \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } }
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 4 6 } } }
                         \startTextSpan
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
@@ -1022,9 +1022,9 @@
                             \tweak style #'la
                             b,,,
                         >8
-                        \!
                         \stopTextSpan
                         r8
+                        \!
                         \override Dots.staff-position = #2
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
@@ -1133,8 +1133,8 @@
                         \glissando
                         - \tweak padding #10.5
                         - \abjad-solid-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } } \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 4 6 } } }
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } }
                         \startTextSpan
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
@@ -1229,9 +1229,9 @@
                             \tweak style #'la
                             b,,
                         >8
-                        \!
                         \stopTextSpan
                         r8
+                        \!
                         \override Dots.staff-position = #2
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
@@ -1290,8 +1290,8 @@
                         \glissando
                         - \tweak padding #9.5
                         - \abjad-solid-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } }
+                        - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } }
                         \startTextSpan
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
@@ -1310,10 +1310,10 @@
                             \tweak style #'la
                             b,,,
                         >4
-                        \!
                         \stopTextSpan
                         \ottava 0
                         r4
+                        \!
                     }
                 }
                 \context timeSignatureStaff = "piano 2 staff"
@@ -1488,11 +1488,12 @@
                             ]
                             \sustainOn
                         }
-                        d,,,4
+                        \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                        <f,,,! cs,,,! e,,,! d,,,!>4
                             _ #(make-dynamic-script (markup #:whiteout #:italic "s. ff"))
                         - \accent
-                        ^ (
-                        ef,,,4
+                        _ (
+                        ef,,,!4
                         - \tenuto
                         \mp
                         )
@@ -1512,7 +1513,8 @@
                         - \accent
                         \f
                         \sustainOff
-                        df,,,16
+                        \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                        <ef,,,! c,,,! fs,,,! cs,,,! e,,,!>16
                         - \staccato
                         )
                         ]
@@ -1523,7 +1525,8 @@
                         - \tweak circled-tip ##t
                         \>
                         ^ (
-                        df,,,8
+                        \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                        <fs,,,! e,,,! cs,,! f,,,! g,,,!>8
                         - \tenuto
                         )
                         ]
@@ -1531,6 +1534,7 @@
                         s1 * 1/4
                         \!
                         \sustainOff
+                        \once \override TupletBracket.padding = #4
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 5/6
                         {
@@ -1570,7 +1574,8 @@
                             c,,,8
                             \p
                             )
-                            bf,,,8
+                            \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                            <g,,,! bf,,,! c,,,! cs,,,!>8
                             - \marcato
                             \f
                             ^ (
@@ -1582,7 +1587,8 @@
                             ef,,,32
                             - \staccato
                             f,,32
-                            ef,,,32
+                            \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                            <af,,,! e,,,! ef,,,! e,,,! g,,,!>32
                             - \accent
                             )
                             ]
@@ -1613,7 +1619,8 @@
                             a,,16
                             - \staccato
                         }
-                        b,,8.
+                        \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                        <b,,! b,,,! d,,! bf,,! b,,!>8.
                         \pp
                         )
                         df,32
@@ -1636,6 +1643,7 @@
                         - \flat-articulation
                         - \staccato
                         ]
+                        \once \override TupletBracket.padding = #2.5
                         \times 4/6
                         {
                             g,,4
@@ -1666,7 +1674,8 @@
                             - \flat-articulation
                             \p
                         }
-                        a,,8
+                        \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                        <af,! a,! cs,! a,! cs!>8
                         \pp
                         )
                         [
@@ -1679,7 +1688,7 @@
                             ^ (
                             \once \override Staff.Accidental.stencil = ##f
                             ef16
-                            - \flat-articulation
+                            ^ \flat-articulation
                             f,16
                             - \staccato
                             )

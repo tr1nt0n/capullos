@@ -75,7 +75,7 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
     ),
     trinton.spanner_command(
-        strings=library.return_bowing_spanner_markups(),
+        strings=library.return_bowing_spanner_markups()[0:2],
         selector=trinton.select_leaves_by_index([0, -1]),
         style="solid-line-with-arrow",
         padding=9,
@@ -147,7 +147,7 @@ trinton.make_music(
     # ),
     # trinton.annotate_leaves_locally(trinton.logical_ties(first=True, pitched=True)),
     trinton.spanner_command(
-        strings=library.return_bowing_spanner_markups(),
+        strings=library.return_bowing_spanner_markups()[0:4],
         selector=trinton.select_logical_ties_by_index(
             [0, 1, 1, 2, 2, 3], first=True, pitched=True
         ),
@@ -164,7 +164,7 @@ trinton.make_music(
         tag=None,
     ),
     trinton.spanner_command(
-        strings=library.return_bowing_spanner_markups(index=3),
+        strings=library.return_bowing_spanner_markups(index=3)[0:2],
         selector=trinton.select_logical_ties_by_index([4, 5], first=True, pitched=True),
         style="solid-line-with-arrow",
         padding=11,
@@ -179,7 +179,7 @@ trinton.make_music(
         tag=None,
     ),
     trinton.spanner_command(
-        strings=library.return_bowing_spanner_markups(index=5),
+        strings=library.return_bowing_spanner_markups(index=5)[0:3],
         selector=trinton.select_logical_ties_by_index(
             [6, 7, 7, 8], first=True, pitched=True
         ),
@@ -196,7 +196,7 @@ trinton.make_music(
         tag=None,
     ),
     trinton.spanner_command(
-        strings=library.return_bowing_spanner_markups(index=7),
+        strings=library.return_bowing_spanner_markups(index=7)[0:4],
         selector=trinton.select_logical_ties_by_index(
             [9, 10, 10, 11, 11, 12], first=True, pitched=True
         ),
@@ -213,7 +213,7 @@ trinton.make_music(
         tag=None,
     ),
     trinton.spanner_command(
-        strings=library.return_bowing_spanner_markups(index=10),
+        strings=library.return_bowing_spanner_markups(index=10)[0:2],
         selector=trinton.select_logical_ties_by_index(
             [13, 14], first=True, pitched=True
         ),
@@ -230,7 +230,7 @@ trinton.make_music(
         tag=None,
     ),
     trinton.spanner_command(
-        strings=library.return_bowing_spanner_markups(index=12),
+        strings=library.return_bowing_spanner_markups(index=12)[0:2],
         selector=trinton.select_logical_ties_by_index(
             [15, 16], first=True, pitched=True
         ),
@@ -247,7 +247,7 @@ trinton.make_music(
         tag=None,
     ),
     trinton.spanner_command(
-        strings=library.return_bowing_spanner_markups(index=14),
+        strings=library.return_bowing_spanner_markups(index=14)[0:6],
         selector=trinton.select_logical_ties_by_index(
             [17, 18, 18, 19, 19, 20, 20, 21, 21, 22], first=True, pitched=True
         ),
@@ -264,7 +264,7 @@ trinton.make_music(
         tag=None,
     ),
     trinton.spanner_command(
-        strings=library.return_bowing_spanner_markups(index=19),
+        strings=library.return_bowing_spanner_markups(index=19)[0:2],
         selector=trinton.select_logical_ties_by_index(
             [23, 24], first=True, pitched=True
         ),
@@ -281,7 +281,7 @@ trinton.make_music(
         tag=None,
     ),
     trinton.spanner_command(
-        strings=library.return_bowing_spanner_markups(index=21),
+        strings=library.return_bowing_spanner_markups(index=21)[0:4],
         selector=trinton.select_logical_ties_by_index(
             [25, 26, 26, 27, 27, 28], first=True, pitched=True
         ),
@@ -298,7 +298,7 @@ trinton.make_music(
         tag=None,
     ),
     trinton.spanner_command(
-        strings=library.return_bowing_spanner_markups(index=25),
+        strings=library.return_bowing_spanner_markups(index=25)[0:2],
         selector=trinton.select_logical_ties_by_index(
             [29, 30], first=True, pitched=True
         ),
@@ -315,7 +315,7 @@ trinton.make_music(
         tag=None,
     ),
     trinton.spanner_command(
-        strings=library.return_bowing_spanner_markups(index=27),
+        strings=library.return_bowing_spanner_markups(index=27)[0:3],
         selector=trinton.select_logical_ties_by_index(
             [31, 32, 32, 33], first=True, pitched=True
         ),
@@ -366,7 +366,7 @@ trinton.make_music(
             abjad.Dynamic('"mf"'),
             abjad.Dynamic('"mf"'),
             abjad.StartHairpin(">o"),
-            abjad.StopHairpin(),
+            # abjad.StopHairpin(),
             abjad.Dynamic('"mf"'),
             abjad.StartHairpin(">"),
             abjad.Dynamic('"ppp"'),
@@ -375,10 +375,10 @@ trinton.make_music(
             abjad.Dynamic('"fff"'),
             abjad.Dynamic('"fff"'),
             abjad.StartHairpin(">o"),
-            abjad.StopHairpin(),
+            # abjad.StopHairpin(),
             abjad.Dynamic('"mf"'),
             abjad.StartHairpin(">o"),
-            abjad.StopHairpin(),
+            # abjad.StopHairpin(),
         ],
         selector=trinton.select_logical_ties_by_index(
             [
@@ -415,7 +415,7 @@ trinton.make_music(
                 22,
                 23,
                 23,
-                24,
+                # 24,
                 25,
                 25,
                 26,
@@ -424,14 +424,18 @@ trinton.make_music(
                 28,
                 29,
                 29,
-                30,
+                # 30,
                 31,
                 31,
-                33,
+                # 33,
             ],
             first=True,
             pitched=True,
         ),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.StopHairpin()],
+        selector=trinton.select_leaves_by_index([-1, -5, -13]),
     ),
     trinton.continuous_glissando(
         selector=trinton.pleaves(), zero_padding=True, no_ties=True
@@ -525,7 +529,6 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (18, 31)),
     evans.PitchHandler(["c,,,"]),
     pitch.sieve_transposition(),
-    trinton.respell_accidentals_command(selector=trinton.pleaves()),
     trinton.octavation(
         octave=2,
         selector=trinton.select_logical_ties_by_index(
@@ -547,6 +550,138 @@ trinton.make_music(
     trinton.octavation(
         octave=-2, selector=trinton.select_logical_ties_by_index([9, 19], pitched=True)
     ),
+    pitch.make_sieve_chords(
+        index=0,
+        selector=trinton.select_logical_ties_by_index(
+            [
+                3,
+                11,
+                13,
+                22,
+                27,
+                34,
+                47,
+            ],
+            pitched=True,
+            grace=False,
+        ),
+    ),
+    trinton.respell_accidentals_command(selector=trinton.pleaves()),
+    trinton.octavation(
+        octave=4,
+        selector=trinton.notehead_selector(
+            chord_indices=[
+                0,
+                2,
+                4,
+            ],
+            head_indices_lists=[
+                [0],
+                [0],
+                [0],
+            ],
+        ),
+    ),
+    trinton.octavation(
+        octave=3,
+        selector=trinton.notehead_selector(
+            chord_indices=[
+                1,
+                3,
+            ],
+            head_indices_lists=[
+                [0],
+                [0],
+            ],
+        ),
+    ),
+    trinton.octavation(
+        octave=2,
+        selector=trinton.notehead_selector(
+            chord_indices=[
+                2,
+                5,
+            ],
+            head_indices_lists=[
+                [2],
+                [0],
+            ],
+        ),
+    ),
+    trinton.octavation(
+        octave=1,
+        selector=trinton.notehead_selector(
+            chord_indices=[
+                0,
+                1,
+                2,
+                4,
+                6,
+                # 6,
+            ],
+            head_indices_lists=[
+                [1, 2],
+                [1, 2],
+                [1],
+                [0, 1],
+                [0, 1, 2],
+                # [0, 1, 2],
+            ],
+        ),
+    ),
+    trinton.octavation(
+        octave=1,
+        selector=trinton.notehead_selector(
+            chord_indices=[
+                6,
+            ],
+            head_indices_lists=[
+                [0, 1, 3],
+            ],
+        ),
+    ),
+    trinton.octavation(
+        octave=-1,
+        selector=trinton.notehead_selector(
+            chord_indices=[
+                1,
+                2,
+                4,
+            ],
+            head_indices_lists=[
+                [-1],
+                [2, 3, 4],
+                [
+                    -1,
+                ],
+            ],
+        ),
+    ),
+    trinton.octavation(
+        octave=-2,
+        selector=trinton.notehead_selector(
+            chord_indices=[
+                3,
+            ],
+            head_indices_lists=[
+                [-1, -2],
+            ],
+        ),
+    ),
+    trinton.force_accidentals_command(
+        selector=trinton.select_logical_ties_by_index([4], first=True, pitched=True)
+    ),
+    trinton.force_accidentals_command(
+        selector=abjad.select.chords,
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Accidental.X-extent = #'(-0.75 . 0.5)", site="before"
+            ),
+        ],
+        selector=abjad.select.chords,
+    ),
     trinton.linear_attachment_command(
         attachments=itertools.cycle(
             [
@@ -565,14 +700,18 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([-8, -7], pitched=True),
     ),
+    # trinton.annotate_leaves_locally(selector=trinton.logical_ties(first=True, pitched=True, grace=False)),
     trinton.attachment_command(
         attachments=[abjad.Clef("bass")],
         selector=trinton.select_leaves_by_index([0], pitched=True),
     ),
     trinton.vertical_accidentals(
         selector=trinton.select_leaves_by_index(
-            [16, 17, 20, 38, 40, 45, 46, 49], pitched=True
+            [16, 17, 20, 38, 40, 45, 46], pitched=True
         )
+    ),
+    trinton.vertical_accidentals(
+        selector=trinton.select_leaves_by_index([49], pitched=True), direction=abjad.UP
     ),
     trinton.ottava_command(
         octave=-2, selector=trinton.select_leaves_by_index([0, 43], pitched=True)
@@ -592,7 +731,7 @@ trinton.make_music(
     trinton.linear_attachment_command(
         attachments=itertools.cycle([abjad.StartSlur(), abjad.StopSlur()]),
         selector=trinton.select_leaves_by_index(
-            [0, 2, 3, 4, 5, 11, 12, 13, 15, 21, 22, 27, 48, 50],
+            [0, 2, 5, 11, 12, 13, 15, 21, 22, 27, 48, 50],
             pitched=True,
             grace=False,
         ),
@@ -602,13 +741,14 @@ trinton.make_music(
         attachments=itertools.cycle([abjad.StartSlur(), abjad.StopSlur()]),
         selector=trinton.select_leaves_by_index(
             [
+                3,
+                4,
                 28,
                 34,
                 35,
                 41,
                 42,
                 47,
-                # 48, 50
             ],
             pitched=True,
             grace=False,
@@ -622,6 +762,17 @@ trinton.make_music(
             )
         ],
         selector=trinton.select_tuplets_by_index([3, -1]),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override TupletBracket.padding = #4", site="before"
+            ),
+            abjad.LilyPondLiteral(
+                r"\once \override TupletBracket.padding = #2.5", site="before"
+            ),
+        ],
+        selector=trinton.select_tuplets_by_index([2, -2]),
     ),
     trinton.linear_attachment_command(
         attachments=[
