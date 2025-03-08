@@ -73,7 +73,9 @@ def punctuation_selector(
     return selector
 
 
-def punctuation_rhythm(stage=1, denominator=16, index=0, extra_counts=[0]):
+def punctuation_rhythm(
+    stage=1, denominator=16, index=0, extra_counts=[0], treat_tuplets=True
+):
     def rhythm(durations):
         container = abjad.Container()
         initial_talea = rmakers.talea(
@@ -142,12 +144,16 @@ def punctuation_rhythm(stage=1, denominator=16, index=0, extra_counts=[0]):
                         abjad.detach(abjad.Tie, leaf)
                     rmakers.force_note(leaves)
 
-        rmakers.rewrite_dots(abjad.select.tuplets(container))
-        rmakers.trivialize(abjad.select.tuplets(container))
-        rmakers.rewrite_rest_filled(abjad.select.tuplets(container))
-        rmakers.rewrite_sustained(abjad.select.tuplets(container))
-        rmakers.extract_trivial(abjad.select.tuplets(container))
-        trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
+        if treat_tuplets is True:
+            rmakers.rewrite_dots(abjad.select.tuplets(container))
+            rmakers.trivialize(abjad.select.tuplets(container))
+            rmakers.rewrite_rest_filled(abjad.select.tuplets(container))
+            rmakers.rewrite_sustained(abjad.select.tuplets(container))
+            rmakers.extract_trivial(abjad.select.tuplets(container))
+            trinton.respell_tuplets(
+                abjad.select.tuplets(container), rewrite_brackets=False
+            )
+
         components = abjad.mutate.eject_contents(container)
 
         return components
@@ -294,7 +300,9 @@ def card_rhythm():
     return make_rhythms
 
 
-def gesture_rhythms(stage=1, index=0, nested_selector=punctuation_selector()):
+def gesture_rhythms(
+    stage=1, index=0, nested_selector=punctuation_selector(), treat_tuplets=True
+):
     new_numerator_list = trinton.remove_adjacent(numerator_list)
     new_numerator_list = trinton.rotated_sequence(
         new_numerator_list, index % len(new_numerator_list)
@@ -334,12 +342,15 @@ def gesture_rhythms(stage=1, index=0, nested_selector=punctuation_selector()):
 
                 abjad.mutate.replace(tie, rhythm_selections)
 
-        rmakers.rewrite_dots(abjad.select.tuplets(container))
-        rmakers.trivialize(abjad.select.tuplets(container))
-        rmakers.rewrite_rest_filled(abjad.select.tuplets(container))
-        rmakers.rewrite_sustained(abjad.select.tuplets(container))
-        rmakers.extract_trivial(abjad.select.tuplets(container))
-        trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
+        if treat_tuplets is True:
+            rmakers.rewrite_dots(abjad.select.tuplets(container))
+            rmakers.trivialize(abjad.select.tuplets(container))
+            rmakers.rewrite_rest_filled(abjad.select.tuplets(container))
+            rmakers.rewrite_sustained(abjad.select.tuplets(container))
+            rmakers.extract_trivial(abjad.select.tuplets(container))
+            trinton.respell_tuplets(
+                abjad.select.tuplets(container), rewrite_brackets=False
+            )
 
         components = abjad.mutate.eject_contents(container)
 

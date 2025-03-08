@@ -234,12 +234,26 @@
                             \tweak style #'la
                             g,,,
                         >4.
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "ffff"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         - \abjad-zero-padding-glissando
                         \glissando
                         - \tweak padding #9
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } } \hspace #0.5 }
                         \startTextSpan
+                        - \tweak stencil #constante-hairpin
+                        \<
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
@@ -263,6 +277,7 @@
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
                         \startTextSpan
+                        \>
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
@@ -280,6 +295,18 @@
                             \tweak style #'la
                             e,,,
                         >8
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "mp"
+                                    #:hspace -0.25
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         \stopTextSpan
                         [
                         - \abjad-zero-padding-glissando
@@ -307,6 +334,18 @@
                             \tweak style #'la
                             a,,,
                         >8
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "f"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         \stopTextSpan
                         ]
                         r8
@@ -327,6 +366,18 @@
                             \tweak style #'la
                             f,,
                         >2
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "fp"
+                                    #:hspace -0.25
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         ^ \markup {
                                             \hspace #-2 {
                                                 ( \note {2} #2 )
@@ -339,6 +390,7 @@
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
                         - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } }
                         \startTextSpan
+                        \<
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
@@ -356,6 +408,18 @@
                             \tweak style #'la
                             d,
                         >8
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "mp"
+                                    #:hspace -0.25
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         \stopTextSpan
                         r8
                         \override Dots.staff-position = #2
@@ -375,12 +439,25 @@
                             \tweak style #'la
                             b,,,
                         >4
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "pp"
+                                    #:hspace -0.25
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         - \abjad-zero-padding-glissando
                         \glissando
                         - \tweak padding #13.5
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 6 6 } } } \hspace #0.5 }
                         \startTextSpan
+                        \<
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
@@ -397,6 +474,18 @@
                             \tweak style #'la
                             a,,,
                         >2.
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "ffff"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         ^ \markup {
                                             \hspace #-2 {
                                                 ( \note {2} #2 \override #'(font-size . 5) . )
@@ -410,6 +499,8 @@
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 4 6 } } } \hspace #0.5 }
                         - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } }
                         \startTextSpan
+                        - \tweak stencil #constante-hairpin
+                        \<
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
@@ -427,6 +518,7 @@
                             \tweak style #'la
                             c,,
                         >8
+                        \!
                         \stopTextSpan
                         r8
                         \override Dots.staff-position = #2
@@ -446,12 +538,25 @@
                             \tweak style #'la
                             b,,,
                         >4.
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "ffff"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         - \abjad-zero-padding-glissando
                         \glissando
                         - \tweak padding #10
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } } \hspace #0.5 }
                         \startTextSpan
+                        \>
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
@@ -468,6 +573,18 @@
                             \tweak style #'la
                             a,
                         >4
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "p"
+                                    #:hspace -0.25
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         \stopTextSpan
                         - \abjad-zero-padding-glissando
                         \glissando
@@ -475,6 +592,7 @@
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
                         \startTextSpan
+                        \<
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
@@ -516,6 +634,18 @@
                             \tweak style #'la
                             c,,,
                         >8
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "ffff"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         \stopTextSpan
                         r8
                         \override Dots.staff-position = #2
@@ -535,6 +665,18 @@
                             \tweak style #'la
                             g,,,
                         >4.
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "f"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         - \abjad-zero-padding-glissando
                         \glissando
                         - \tweak padding #10.5
@@ -542,6 +684,8 @@
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
                         - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } }
                         \startTextSpan
+                        - \tweak stencil #constante-hairpin
+                        \<
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
@@ -559,6 +703,7 @@
                             \tweak style #'la
                             e,,
                         >8
+                        \!
                         \stopTextSpan
                         r8
                         \override Dots.staff-position = #2
@@ -578,6 +723,18 @@
                             \tweak style #'la
                             b,,
                         >4
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "ff"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         - \abjad-zero-padding-glissando
                         \glissando
                         - \tweak padding #7
@@ -585,6 +742,8 @@
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
                         - \tweak bound-details.right.text \markup \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } }
                         \startTextSpan
+                        - \tweak stencil #constante-hairpin
+                        \<
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
@@ -602,6 +761,7 @@
                             \tweak style #'la
                             a,,
                         >8
+                        \!
                         \stopTextSpan
                         r8
                         \override Dots.staff-position = #2
@@ -628,6 +788,8 @@
                                         }
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak circled-tip ##t
+                        \<
                         - \tweak padding #13
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
@@ -648,6 +810,18 @@
                             \tweak style #'la
                             b,,,
                         >4
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "p"
+                                    #:hspace -0.25
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         \stopTextSpan
                         - \abjad-zero-padding-glissando
                         \glissando
@@ -655,6 +829,7 @@
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 5 6 } } } \hspace #0.5 }
                         \startTextSpan
+                        \<
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
@@ -694,6 +869,18 @@
                             \tweak style #'la
                             f,
                         >4
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "fff"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         \stopTextSpan
                         - \abjad-zero-padding-glissando
                         \glissando
@@ -701,6 +888,8 @@
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } } \hspace #0.5 }
                         \startTextSpan
+                        - \tweak stencil #constante-hairpin
+                        \<
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
@@ -720,6 +909,8 @@
                         \stopTextSpan
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak circled-tip ##t
+                        \>
                         - \tweak padding #13
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
@@ -742,6 +933,18 @@
                             \tweak style #'la
                             b,,,,
                         >8
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "mf"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         \stopTextSpan
                         r8
                         \override Dots.staff-position = #2
@@ -761,10 +964,24 @@
                             \tweak style #'la
                             e,,
                         >4.
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "mf"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                           %! abjad.glissando(7)
                         - \abjad-zero-padding-glissando
                           %! abjad.glissando(7)
                         \glissando
+                        - \tweak circled-tip ##t
+                        \>
                         - \tweak padding #10.5
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 3 6 } } } \hspace #0.5 }
@@ -819,6 +1036,7 @@
                             \tweak style #'la
                             b,,,
                         >8
+                        \!
                         \stopTextSpan
                         r8
                         \override Dots.staff-position = #2
@@ -838,12 +1056,25 @@
                             \tweak style #'la
                             a,
                         >4.
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "mf"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         - \abjad-zero-padding-glissando
                         \glissando
                         - \tweak padding #10.5
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
                         \startTextSpan
+                        \>
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
@@ -860,6 +1091,18 @@
                             \tweak style #'la
                             f,,
                         >4
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "ppp"
+                                    #:hspace -0.25
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         \stopTextSpan
                         - \abjad-zero-padding-glissando
                         \glissando
@@ -867,6 +1110,8 @@
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe610 } \line { \override #'(font-size . 1) \upright \fraction 6 6 } } } \hspace #0.5 }
                         \startTextSpan
+                        - \tweak stencil #abjad-flared-hairpin
+                        \<
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
@@ -884,6 +1129,18 @@
                             \tweak style #'la
                             d,,,
                         >8
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "ff"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         \stopTextSpan
                         [
                         - \abjad-zero-padding-glissando
@@ -911,6 +1168,18 @@
                             \tweak style #'la
                             g,,,
                         >8
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "fff"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         \stopTextSpan
                         ]
                         r8
@@ -931,6 +1200,18 @@
                             \tweak style #'la
                             e,,
                         >2
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "fff"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         ^ \markup {
                                             \hspace #-2 {
                                                 ( \note {2} #2 )
@@ -938,6 +1219,8 @@
                                         }
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak circled-tip ##t
+                        \>
                         - \tweak padding #15.5
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
@@ -960,6 +1243,7 @@
                             \tweak style #'la
                             b,,
                         >8
+                        \!
                         \stopTextSpan
                         r8
                         \override Dots.staff-position = #2
@@ -979,8 +1263,22 @@
                             \tweak style #'la
                             a,,
                         >4
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "mf"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
                         - \abjad-zero-padding-glissando
                         \glissando
+                        - \tweak circled-tip ##t
+                        \>
                         - \tweak padding #9.5
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \concat { \center-column { \line { \override #'(font-name . "ekmelos") \override #'(font-size . 4) \char ##xe612 } \line { \override #'(font-size . 1) \upright \fraction 2 6 } } } \hspace #0.5 }
@@ -1026,6 +1324,7 @@
                             \tweak style #'la
                             b,,,
                         >4
+                        \!
                         \stopTextSpan
                         \ottava 0
                         r4
@@ -1172,129 +1471,233 @@
                             \sustainOff
                         }
                         s1 * 1/4
+                        \afterGrace
                         s1 * 1/4
+                        \sustainOn
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                            \sustainOff
+                        }
                         \times 2/3
                         {
-                            c'8
+                            \ottava -2
+                            \clef "bass"
+                            df,,,8
+                            - \accent
+                            \ff
                             [
-                            c'8
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
+                            ^ (
+                            d,,,8
+                            - \staccato
+                            \mf
+                            - \tweak circled-tip ##t
+                            \>
+                            c,,,8
+                            )
                             ]
+                            \sustainOn
                         }
-                        c'4
-                        c'4
+                        d,,,4
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "s. ff"))
+                        - \accent
+                        ^ (
+                        ef,,,4
+                        - \tenuto
+                        \mp
+                        )
                         \times 2/3
                         {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 1
-                            c'8
+                            f,,,8
                             [
-                            c'8
-                            c'8
+                            \<
+                            ^ (
+                            af,,,8
+                            e,,,8
                         }
-                        c'16
-                        c'16
-                        c'16
-                        \set stemLeftBeamCount = 2
-                        \set stemRightBeamCount = 1
-                        c'16
+                        af,,,16
+                        - \marcato
+                        bf,,,,16
+                        c,,,16
+                        - \accent
+                        \f
+                        \sustainOff
+                        df,,,16
+                        - \staccato
+                        )
                         ]
                         s1 * 1/4
-                        \set stemLeftBeamCount = 1
-                        \set stemRightBeamCount = 1
-                        c'8
+                        c,,,8
+                        - \accent
                         [
-                        \set stemLeftBeamCount = 1
-                        \set stemRightBeamCount = 1
-                        c'8
+                        - \tweak circled-tip ##t
+                        \>
+                        ^ (
+                        df,,,8
+                        - \tenuto
+                        )
                         ]
+                        \sustainOn
                         s1 * 1/4
+                        \!
+                        \sustainOff
                         \tweak text #tuplet-number::calc-fraction-text
-                        \times 10/9
+                        \times 5/6
                         {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
-                            c'16.
+                            d,,,8
+                            - \marcato
+                            \mf
                             [
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            c'16.
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 4
-                            c'64
-                            c'64
-                            c'64
-                            c'64
-                            c'64
-                            \set stemLeftBeamCount = 4
-                            \set stemRightBeamCount = 1
-                            c'64
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
-                            c'16.
-                            c'64.
-                            \set stemLeftBeamCount = 4
-                            \set stemRightBeamCount = 1
-                            c'64.
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 4
-                            c'64.
-                            c'64.
-                            \set stemLeftBeamCount = 2
-                            \set stemRightBeamCount = 1
-                            c'16.
+                            \sustainOn
+                            \once \override TupletBracket.direction = #UP
+                            \times 4/6
+                            {
+                                e,,,32
+                                \pp
+                                \<
+                                ^ (
+                                \once \override Staff.Accidental.stencil = ##f
+                                fs,,,32
+                                - \accent
+                                - \sharp-articulation
+                                \sustainOff
+                                \once \override Staff.Accidental.stencil = ##f
+                                f,,,32
+                                - \natural-articulation
+                                - \staccato
+                                g,,,32
+                                a,,,,32
+                                - \accent
+                                \mf
+                                \>
+                                \sustainOn
+                                \once \override Staff.Accidental.stencil = ##f
+                                bf,,,,32
+                                - \flat-articulation
+                                - \tenuto
+                            }
+                            \once \override DynamicText.X-extent = #'(-0.05 . -0.05)
+                            c,,,8
+                            \p
+                            )
+                            bf,,,8
+                            - \marcato
+                            \f
+                            ^ (
+                            b,,,8
+                            - \accent
+                            df,,32
+                            \ff
+                            \sustainOff
+                            ef,,,32
+                            - \staccato
+                            f,,32
+                            ef,,,32
+                            - \accent
+                            )
                             ]
+                            \sustainOn
                         }
                         s1 * 1/4
                         s1 * 3/8
+                        \sustainOff
                         \times 4/6
                         {
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
-                            c'16
+                            e,,,16
+                            - \tenuto
+                            \p
                             [
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                            c'16
+                            \sustainOn
+                            _ (
+                            f,,16
+                            - \marcato
+                            \f
+                            g,,16
+                            \p
+                            a,,16
+                            - \accent
+                            \f
+                            \sustainOff
+                            \>
+                            g,,16
+                            a,,16
+                            - \staccato
                         }
-                        c'8.
-                        c'32
-                        c'32
-                        c'32
-                        c'32
-                        c'32
-                        \set stemLeftBeamCount = 3
-                        \set stemRightBeamCount = 1
-                        c'32
+                        b,,8.
+                        \pp
+                        )
+                        df,32
+                        - \accent
+                        \ff
+                        _ (
+                        d,,32
+                        - \tenuto
+                        df,32
+                        - \marcato
+                        \sustainOn
+                        \once \override Staff.Accidental.stencil = ##f
+                        d,32
+                        - \accent
+                        - \natural-articulation
+                        e,32
+                        \sustainOff
+                        \once \override Staff.Accidental.stencil = ##f
+                        gf,,32
+                        - \flat-articulation
+                        - \staccato
                         ]
                         \times 4/6
                         {
-                            c'4
-                            \set stemLeftBeamCount = 1
-                            \set stemRightBeamCount = 2
-                            c'16
+                            g,,4
+                            - \accent
+                            )
+                            f,,16
+                            \pp
                             [
-                            c'16
-                            c'16
+                            \<
+                            \sustainOn
+                            _ (
                             \set stemLeftBeamCount = 2
                             \set stemRightBeamCount = 1
-                            c'16
+                            g,,16
+                            - \tenuto
+                            \ottava 0
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 2
+                            af,16
+                            - \marcato
+                            \once \override Staff.Accidental.stencil = ##f
+                            bf,16
+                            - \flat-articulation
+                            \f
                             ]
-                            c'4
+                            \once \override Staff.Accidental.stencil = ##f
+                            df,4
+                            - \flat-articulation
+                            \p
                         }
-                        \set stemLeftBeamCount = 1
-                        \set stemRightBeamCount = 1
-                        c'8
+                        a,,8
+                        \pp
+                        )
                         [
+                        \once \override TupletBracket.direction = #UP
                         \times 2/3
                         {
-                            c'16
-                            c'16
-                            c'16
+                            df16
+                            - \accent
+                            \f
+                            ^ (
+                            \once \override Staff.Accidental.stencil = ##f
+                            ef16
+                            - \flat-articulation
+                            f,16
+                            - \staccato
+                            )
+                            \sustainOff
                             ]
                         }
                         s1 * 1/4

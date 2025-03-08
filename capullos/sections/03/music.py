@@ -331,6 +331,108 @@ trinton.make_music(
         end_hook_right_padding=1.5,
         tag=None,
     ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic('"ffff"'),
+            abjad.StartHairpin("--"),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic('"mp"'),
+            abjad.Dynamic('"f"'),
+            abjad.Dynamic('"fp"'),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic('"mp"'),
+            abjad.Dynamic('"pp"'),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic('"ffff"'),
+            abjad.StartHairpin("--"),
+            abjad.StopHairpin(),
+            abjad.Dynamic('"ffff"'),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic('"p"'),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic('"ffff"'),
+            abjad.Dynamic('"f"'),
+            abjad.StartHairpin("--"),
+            abjad.StopHairpin(),
+            abjad.Dynamic('"ff"'),
+            abjad.StartHairpin("--"),
+            abjad.StopHairpin(),
+            abjad.StartHairpin("o<"),
+            abjad.Dynamic('"p"'),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic('"fff"'),
+            abjad.StartHairpin("--"),
+            abjad.StartHairpin(">o"),
+            abjad.Dynamic('"mf"'),
+            abjad.Dynamic('"mf"'),
+            abjad.StartHairpin(">o"),
+            abjad.StopHairpin(),
+            abjad.Dynamic('"mf"'),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic('"ppp"'),
+            abjad.StartHairpin("<|"),
+            abjad.Dynamic('"ff"'),
+            abjad.Dynamic('"fff"'),
+            abjad.Dynamic('"fff"'),
+            abjad.StartHairpin(">o"),
+            abjad.StopHairpin(),
+            abjad.Dynamic('"mf"'),
+            abjad.StartHairpin(">o"),
+            abjad.StopHairpin(),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [
+                0,
+                0,
+                1,
+                2,
+                3,
+                4,
+                4,
+                5,
+                6,
+                6,
+                7,
+                7,
+                8,
+                9,
+                9,
+                10,
+                10,
+                12,
+                13,
+                13,
+                14,
+                15,
+                15,
+                16,
+                17,
+                18,
+                18,
+                20,
+                20,
+                21,
+                22,
+                23,
+                23,
+                24,
+                25,
+                25,
+                26,
+                26,
+                27,
+                28,
+                29,
+                29,
+                30,
+                31,
+                31,
+                33,
+            ],
+            first=True,
+            pitched=True,
+        ),
+    ),
     trinton.continuous_glissando(
         selector=trinton.pleaves(), zero_padding=True, no_ties=True
     ),
@@ -340,7 +442,7 @@ trinton.make_music(
 
 # lh music
 
-for measure in [1, 4, 6, 9, 12, 15]:
+for measure in [1, 4, 6, 9, 12, 15, 17]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
         trinton.aftergrace_command(
@@ -373,15 +475,35 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (25,)),
     evans.RhythmHandler(
         rhythm.gesture_rhythms(
-            stage=2,
+            stage=1,
             index=5,
-            nested_selector=trinton.select_logical_ties_by_index([2, 4], pitched=True),
         )
     ),
     trinton.rewrite_meter_command(),
     trinton.respell_tuplets_command(rewrite_brackets=False),
+    trinton.replace_with_rhythm_selection(
+        rhythmhandler=evans.RhythmHandler(evans.tuplet([(1, 1, 1, 1, 1, 1)])),
+        selector=trinton.select_leaves_by_index(
+            [
+                1,
+            ],
+            pitched=True,
+        ),
+    ),
+    trinton.replace_with_rhythm_selection(
+        rhythmhandler=evans.RhythmHandler(evans.tuplet([(1, 1, 1, 1)])),
+        selector=trinton.select_leaves_by_index(
+            [
+                -1,
+            ],
+            pitched=True,
+        ),
+    ),
     voice=score["piano 3 voice"],
 )
+
+relevant_tuplet = abjad.select.tuplet(score["piano 3 voice"], 3)
+relevant_tuplet.multiplier = (4, 6)
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (28, 31)),
@@ -401,7 +523,30 @@ trinton.make_music(
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (18, 31)),
-    # trinton.annotate_leaves_locally(selector=trinton.pleaves()),
+    evans.PitchHandler(["c,,,"]),
+    pitch.sieve_transposition(),
+    trinton.respell_accidentals_command(selector=trinton.pleaves()),
+    trinton.octavation(
+        octave=2,
+        selector=trinton.select_logical_ties_by_index(
+            [26, 31, 36, 37, 38, 41, 45, 46, 47, 48, 49, 50], pitched=True
+        ),
+    ),
+    trinton.octavation(
+        octave=1,
+        selector=trinton.select_logical_ties_by_index(
+            [1, 6, 11, 16, 22, 30, 32, 33, 35, 39, 40, 42, 43, 44], pitched=True
+        ),
+    ),
+    trinton.octavation(
+        octave=-1,
+        selector=trinton.select_logical_ties_by_index(
+            [4, 10, 14, 20, 24], pitched=True
+        ),
+    ),
+    trinton.octavation(
+        octave=-2, selector=trinton.select_logical_ties_by_index([9, 19], pitched=True)
+    ),
     trinton.linear_attachment_command(
         attachments=itertools.cycle(
             [
@@ -415,47 +560,177 @@ trinton.make_music(
     ),
     trinton.linear_attachment_command(
         attachments=[
-            abjad.BeamCount(left=1, right=1),
-            abjad.BeamCount(left=1, right=1),
-            abjad.BeamCount(left=2, right=1),
-            abjad.BeamCount(left=1, right=1),
-            abjad.BeamCount(left=1, right=1),
-            abjad.BeamCount(left=1, right=2),
-            abjad.BeamCount(left=2, right=1),
-            abjad.BeamCount(left=1, right=4),
-            abjad.BeamCount(left=4, right=1),
-            abjad.BeamCount(left=1, right=2),
-            abjad.BeamCount(left=4, right=1),
-            abjad.BeamCount(left=1, right=4),
             abjad.BeamCount(left=2, right=1),
             abjad.BeamCount(left=1, right=2),
-            abjad.BeamCount(left=3, right=1),
-            abjad.BeamCount(left=1, right=2),
-            abjad.BeamCount(left=2, right=1),
-            abjad.BeamCount(left=1, right=1),
+        ],
+        selector=trinton.select_leaves_by_index([-8, -7], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Clef("bass")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.vertical_accidentals(
+        selector=trinton.select_leaves_by_index(
+            [16, 17, 20, 38, 40, 45, 46, 49], pitched=True
+        )
+    ),
+    trinton.ottava_command(
+        octave=-2, selector=trinton.select_leaves_by_index([0, 43], pitched=True)
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.Articulation(">"),
+                abjad.Articulation("staccato"),
+                abjad.Articulation(">"),
+                abjad.Articulation("tenuto"),
+                abjad.Articulation("marcato"),
+            ],
+        ),
+        selector=rhythm.punctuation_selector(first=True, pitched=True, grace=False),
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartSlur(), abjad.StopSlur()]),
+        selector=trinton.select_leaves_by_index(
+            [0, 2, 3, 4, 5, 11, 12, 13, 15, 21, 22, 27, 48, 50],
+            pitched=True,
+            grace=False,
+        ),
+        direction=abjad.UP,
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartSlur(), abjad.StopSlur()]),
+        selector=trinton.select_leaves_by_index(
+            [
+                28,
+                34,
+                35,
+                41,
+                42,
+                47,
+                # 48, 50
+            ],
+            pitched=True,
+            grace=False,
+        ),
+        direction=abjad.DOWN,
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override TupletBracket.direction = #UP", site="before"
+            )
+        ],
+        selector=trinton.select_tuplets_by_index([3, -1]),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic("ff"),
+            abjad.Dynamic("mf"),
+            abjad.StartHairpin(">o"),
+            trinton.make_custom_dynamic("s. ff"),
+            abjad.Dynamic("mp"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("f"),
+            abjad.StartHairpin(">o"),
+            abjad.Dynamic("mf"),
+            abjad.Dynamic("pp"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("mf"),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic("p"),
+            abjad.LilyPondLiteral(
+                r"\once \override DynamicText.X-extent = #'(-0.05 . -0.05)",
+                site="before",
+            ),
+            abjad.Dynamic("f"),
+            abjad.Dynamic("ff"),
+            abjad.Dynamic("p"),
+            abjad.Dynamic("f"),
+            abjad.Dynamic("p"),
+            abjad.Dynamic("f"),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic("pp"),
+            abjad.Dynamic("ff"),
+            abjad.Dynamic("pp"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("f"),
+            abjad.Dynamic("p"),
+            abjad.Dynamic("pp"),
+            abjad.Dynamic("f"),
         ],
         selector=trinton.select_leaves_by_index(
             [
-                2,
+                0,
+                1,
+                1,
+                3,
+                4,
                 5,
-                11,
+                10,
                 12,
-                13,
                 14,
                 15,
-                16,
+                15,
+                19,
+                19,
+                21,
                 21,
                 22,
                 24,
-                25,
-                27,
                 28,
-                40,
+                29,
+                30,
+                31,
+                31,
+                34,
+                35,
+                42,
                 42,
                 45,
+                46,
                 47,
+                48,
             ],
             pitched=True,
+            grace=False,
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.StopHairpin()],
+        selector=trinton.select_leaves_by_index(
+            [
+                15,
+            ],
+        ),
+    ),
+    # trinton.annotate_leaves_locally(selector=abjad.select.leaves),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.StartPianoPedal(),
+                abjad.StopPianoPedal(),
+            ]
+        ),
+        selector=trinton.select_leaves_by_index(
+            [
+                2,
+                10,
+                14,
+                15,
+                16,
+                18,
+                21,
+                26,
+                29,
+                31,
+                32,
+                35,
+                41,
+                43,
+                46,
+                54,
+            ]
         ),
     ),
     voice=score["piano 3 voice"],

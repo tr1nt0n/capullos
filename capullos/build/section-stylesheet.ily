@@ -149,7 +149,7 @@ afterGraceFraction = #(cons 15 16)
         \override OttavaBracket.whiteout-style = #'outline
         \override OttavaBracket.whiteout = 1
 
-        \override PianoPedalBracket.shorten-pair = #'(0 . -4)
+        \override PianoPedalBracket.shorten-pair = #'(0 . -1.5)
         % \override PianoPedalBracket.color = \一
 
         % \override SpanBar.color = \二
