@@ -68,6 +68,29 @@ revert_to_lh = eval(
 )
 
 # notation tools
+def manual_beam_positions(positions, selector=abjad.select.leaves):
+    def beaming(argument):
+        selections = selector(argument)
+        leaves = abjad.select.leaves(selections)
+        start_beam_leaves = []
+
+        for leaf in leaves:
+            if abjad.get.has_indicator(leaf, abjad.StartBeam):
+                start_beam_leaves.append(leaf)
+
+        for start_beam_leaf in start_beam_leaves:
+            start_beam = abjad.get.indicator(start_beam_leaf, abjad.StartBeam)
+
+            start_beam = abjad.bundle(
+                start_beam,
+                rf"- \tweak Beam.positions #'({positions[0]} . {positions[-1]})",
+            )
+
+            abjad.detach(abjad.StartBeam, start_beam_leaf)
+
+            abjad.attach(start_beam, start_beam_leaf)
+
+    return beaming
 
 
 def return_bowing_spanner_markups(index=0):
