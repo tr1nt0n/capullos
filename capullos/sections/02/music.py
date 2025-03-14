@@ -236,7 +236,7 @@ trinton.make_music(
         selector=trinton.select_logical_ties_by_index(
             [95, 99], pitched=True, first=True
         ),
-        stem_lengths=[20, 22],
+        stem_lengths=[25, 29],
     ),
     trinton.attachment_command(
         attachments=[
@@ -252,7 +252,7 @@ trinton.make_music(
                             (min (car pos)(cdr pos)))))
                             (ly:grob-set-property! grob 'positions (cons new-pos new-pos))
                             (ly:tuplet-bracket::print grob)))""",
-                    r"\once \override TupletBracket.padding = #-12",
+                    r"\once \override TupletBracket.padding = #-17",
                 ],
                 site="before",
             )
@@ -609,7 +609,7 @@ trinton.make_music(
     voice=score["Global Context"],
 )
 
-for measure in [1, 2, 3, 4, 5, 6]:
+for measure in [1, 2, 3, 4, 5, 6, 19]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
         trinton.attachment_command(

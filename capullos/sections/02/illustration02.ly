@@ -139,6 +139,7 @@
             R1 * 1/4
             - \tweak font-size #'10
             _ \middle-fermata
+            \noBreak
             \once \override Score.BarLine.transparent = ##f
         }
         \context StaffGroup = "Staff Group"
@@ -622,7 +623,7 @@
                         \change Staff = "piano 3 staff"
                         \once \override Stem.cross-staff = ##t
                         \once \override Stem.Y-extent = #'(0 . 0)
-                        \once \override Stem.details.lengths = #'(20)
+                        \once \override Stem.details.lengths = #'(25)
                         \once \override Flag.cross-staff = ##t
                         \once \override Flag.Y-extent = #'(0 . 0)
                         \override Flag.stencil = ##f
@@ -639,7 +640,7 @@
                             \change Staff = "piano 3 staff"
                             \once \override Stem.cross-staff = ##t
                             \once \override Stem.Y-extent = #'(0 . 0)
-                            \once \override Stem.details.lengths = #'(22)
+                            \once \override Stem.details.lengths = #'(29)
                             \once \override Flag.cross-staff = ##t
                             \once \override Flag.Y-extent = #'(0 . 0)
                             \once \override TupletBracket.direction = #UP
@@ -652,11 +653,11 @@
                                                         (min (car pos)(cdr pos)))))
                                                         (ly:grob-set-property! grob 'positions (cons new-pos new-pos))
                                                         (ly:tuplet-bracket::print grob)))
-                            \once \override TupletBracket.padding = #-12
+                            \once \override TupletBracket.padding = #-17
                             f,4
-                            \change Staff = "piano 1 staff"
                             \revert Staff.Flag.stencil
                             \revert Staff.Stem.direction
+                            \change Staff = "piano 1 staff"
                             b''2
                         }
                           %! +SCORE
@@ -710,6 +711,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \ottava -2
                         \override Staff.Stem.direction = #DOWN
                         \clef "bass"
@@ -737,6 +739,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -761,6 +764,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -785,6 +789,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -810,6 +815,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -833,6 +839,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -859,6 +866,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -882,6 +890,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,
@@ -904,6 +913,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -928,6 +938,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -953,6 +964,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,
@@ -975,6 +987,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -1000,6 +1013,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -1023,6 +1037,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,
@@ -1045,6 +1060,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -1070,6 +1086,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -1093,6 +1110,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,
@@ -1115,6 +1133,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -1140,6 +1159,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -1163,6 +1183,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,
@@ -1185,6 +1206,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -1211,6 +1233,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -1234,6 +1257,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -1258,6 +1282,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -1282,6 +1307,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,
@@ -1304,6 +1330,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -1330,6 +1357,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -1353,6 +1381,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -1377,6 +1406,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -1401,6 +1431,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -1426,6 +1457,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -1450,6 +1482,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,
@@ -1472,6 +1505,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -1497,6 +1531,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -1520,6 +1555,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,
@@ -1542,6 +1578,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -1569,6 +1606,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \ottava -2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
@@ -1594,6 +1632,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,
@@ -1616,6 +1655,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -1642,6 +1682,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -1665,6 +1706,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -1690,6 +1732,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -1713,6 +1756,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,
@@ -1735,6 +1779,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,
@@ -1757,6 +1802,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -1781,6 +1827,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -1805,6 +1852,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,
@@ -1828,6 +1876,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,
@@ -1849,6 +1898,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -1873,6 +1923,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -1897,6 +1948,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,
@@ -1919,426 +1971,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
-                        \revert leftHandStaff.Stem.stemlet-length
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >16
-                        - \accent
-                        ]
-                        ~
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        \override leftHandStaff.Stem.stemlet-length = 0.75
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >16
-                        [
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >16
-                        - \accent
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        \revert leftHandStaff.Stem.stemlet-length
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >8
-                        - \accent
-                        ]
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        \override leftHandStaff.Stem.stemlet-length = 0.75
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >8
-                        - \accent
-                        [
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >16
-                        - \accent
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        \revert leftHandStaff.Stem.stemlet-length
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >16
-                        - \accent
-                        ]
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        \override leftHandStaff.Stem.stemlet-length = 0.75
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >8
-                        - \accent
-                        [
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        \revert leftHandStaff.Stem.stemlet-length
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >8
-                        - \accent
-                        ]
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        \override leftHandStaff.Stem.stemlet-length = 0.75
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >8
-                        - \accent
-                        [
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >16
-                        - \accent
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        \revert leftHandStaff.Stem.stemlet-length
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >16
-                        - \accent
-                        ]
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        \override leftHandStaff.Stem.stemlet-length = 0.75
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >16
-                        - \accent
-                        [
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >16
-                        - \accent
-                        ~
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >16
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        \revert leftHandStaff.Stem.stemlet-length
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >16
-                        - \accent
-                        ]
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        \override leftHandStaff.Stem.stemlet-length = 0.75
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >8
-                        - \accent
-                        [
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
-                        <
-                            \tweak style #'la
-                            a,,,,
-                            \tweak style #'la
-                            b,,,,
-                            \tweak style #'la
-                            c,,,
-                            \tweak style #'la
-                            d,,,
-                            \tweak style #'la
-                            e,,,
-                            \tweak style #'la
-                            f,,,
-                            \tweak style #'la
-                            g,,,
-                            \tweak style #'la
-                            a,,,
-                        >16
-                        - \accent
-                        \once \override NoteHead.X-offset = 0
-                        \once \override Staff.Accidental.stencil = ##f
-                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -2364,6 +1997,445 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        \override leftHandStaff.Stem.stemlet-length = 0.75
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >16
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >16
+                        - \accent
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        \revert leftHandStaff.Stem.stemlet-length
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >8
+                        - \accent
+                        ]
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        \override leftHandStaff.Stem.stemlet-length = 0.75
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >8
+                        - \accent
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >16
+                        - \accent
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        \revert leftHandStaff.Stem.stemlet-length
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >16
+                        - \accent
+                        ]
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        \override leftHandStaff.Stem.stemlet-length = 0.75
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >8
+                        - \accent
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        \revert leftHandStaff.Stem.stemlet-length
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >8
+                        - \accent
+                        ]
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        \override leftHandStaff.Stem.stemlet-length = 0.75
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >8
+                        - \accent
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >16
+                        - \accent
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        \revert leftHandStaff.Stem.stemlet-length
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >16
+                        - \accent
+                        ]
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        \override leftHandStaff.Stem.stemlet-length = 0.75
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >16
+                        - \accent
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >16
+                        - \accent
+                        ~
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >16
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        \revert leftHandStaff.Stem.stemlet-length
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >16
+                        - \accent
+                        ]
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        \override leftHandStaff.Stem.stemlet-length = 0.75
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >8
+                        - \accent
+                        [
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >16
+                        - \accent
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
+                        \revert leftHandStaff.Stem.stemlet-length
+                        <
+                            \tweak style #'la
+                            a,,,,
+                            \tweak style #'la
+                            b,,,,
+                            \tweak style #'la
+                            c,,,
+                            \tweak style #'la
+                            d,,,
+                            \tweak style #'la
+                            e,,,
+                            \tweak style #'la
+                            f,,,
+                            \tweak style #'la
+                            g,,,
+                            \tweak style #'la
+                            a,,,
+                        >16
+                        - \accent
+                        ]
+                        ~
+                        \once \override NoteHead.X-offset = 0
+                        \once \override Staff.Accidental.stencil = ##f
+                        \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \override leftHandStaff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'la
@@ -2387,6 +2459,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         \revert leftHandStaff.Stem.stemlet-length
                         <
                             \tweak style #'la
@@ -2412,6 +2485,7 @@
                         \once \override NoteHead.X-offset = 0
                         \once \override Staff.Accidental.stencil = ##f
                         \once \override Staff.Glissando.thickness = #8.25
+                        \once \override NoteHead.duration-log = 2
                         <
                             \tweak style #'la
                             a,,,,

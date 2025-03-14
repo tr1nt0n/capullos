@@ -218,12 +218,11 @@ afterGraceFraction = #(cons 15 16)
         %          (ly:tuplet-bracket::print grob)))
         \override TupletBracket.direction = #UP
 
-        % \override VoltaBracketSpanner.padding = 1
+        % \override VoltaBracketSpanner.padding = 5
     }
 
     \context {
         \Staff
-        \consists "Span_stem_engraver"
         fontSize = #-3.5
         \remove Time_signature_engraver
         % \consists Measure_spanner_engraver

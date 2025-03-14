@@ -458,18 +458,18 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[abjad.Clef("treble")], selector=trinton.select_leaves_by_index([0])
     ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\override Staff.Stem.direction = #DOWN", site="before"
-            ),
-            # abjad.LilyPondLiteral(
-            #     r"\revert Staff.Stem.direction",
-            #     site="absolute_after"
-            # ),
-        ],
-        selector=trinton.select_leaves_by_index([0, -1]),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\override Staff.Stem.direction = #DOWN", site="before"
+    #         ),
+    #         # abjad.LilyPondLiteral(
+    #         #     r"\revert Staff.Stem.direction",
+    #         #     site="absolute_after"
+    #         # ),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0, -1]),
+    # ),
     voice=score["piano 1 voice"],
 )
 
@@ -1083,33 +1083,31 @@ trinton.make_music(
             grace=False,
         ),
     ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\override Staff.Stem.direction = #DOWN", site="before"
-            ),
-            abjad.LilyPondLiteral(
-                r"\revert Staff.Stem.direction", site="absolute_after"
-            ),
-        ],
-        selector=trinton.select_leaves_by_index([25, -1], pitched=True),
-    ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override Stem.direction = #DOWN", site="before"
+    #         ),
+    #     ],
+    #     selector=trinton.select_leaves_by_index(list(range(25, 48)), pitched=True),
+    # ),
     trinton.attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
                 r"\once \override TupletBracket.direction = #UP", site="before"
             )
         ],
-        selector=trinton.select_tuplets_by_index([0]),
+        selector=abjad.select.tuplets,
     ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override TupletBracket.direction = #DOWN", site="before"
-            )
-        ],
-        selector=trinton.select_tuplets_by_index(list(range(1, 5))),
-    ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override TupletBracket.padding = #-6.5",
+    #             site="before"
+    #         )
+    #     ],
+    #     selector=trinton.select_tuplets_by_index([-1]),
+    # ),
     trinton.linear_attachment_command(
         attachments=itertools.cycle(
             [
@@ -1160,17 +1158,35 @@ trinton.make_music(
                 27,
                 29,
                 35,
+                # 36,
+                # 37,
+                # 38,
+                # 39,
+                # 41,
+                # 42,
+                44,
+                47,
+            ],
+            pitched=True,
+        ),
+        direction=abjad.UP,
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [abjad.StartSlur(), abjad.StopSlur()],
+        ),
+        selector=trinton.select_leaves_by_index(
+            [
                 36,
                 37,
                 38,
                 39,
                 41,
                 42,
-                44,
-                47,
             ],
             pitched=True,
         ),
+        direction=abjad.DOWN,
     ),
     trinton.linear_attachment_command(
         attachments=[
@@ -1230,23 +1246,36 @@ trinton.make_music(
                 r"\once \override DynamicLineSpanner.padding = #3.5", site="before"
             ),
             abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.padding = #2", site="before"
+                r"\once \override DynamicLineSpanner.padding = #3", site="before"
             ),
             abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.padding = #3.5", site="before"
+                r"\once \override DynamicLineSpanner.padding = #6", site="before"
             ),
             abjad.LilyPondLiteral(
                 r"\once \override DynamicLineSpanner.padding = #3", site="before"
             ),
+            # abjad.LilyPondLiteral(
+            #     r"\once \override DynamicLineSpanner.padding = #5.5", site="before"
+            # ),
             abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.padding = #5.5", site="before"
+                r"\once \override DynamicLineSpanner.padding = #5", site="before"
             ),
             abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.padding = #4", site="before"
+                r"\once \override DynamicLineSpanner.padding = #2", site="before"
             ),
         ],
         selector=trinton.select_leaves_by_index(
-            [4, 15, 36, 37, 39, 41, 42], pitched=True
+            [
+                4,
+                15,
+                36,
+                37,
+                39,
+                # 41,
+                42,
+                44,
+            ],
+            pitched=True,
         ),
     ),
     trinton.linear_attachment_command(
@@ -1258,18 +1287,16 @@ trinton.make_music(
                 r"\override Score.SustainPedalLineSpanner.padding = #7", site="before"
             ),
             abjad.LilyPondLiteral(
-                r"\override Score.SustainPedalLineSpanner.padding = #14", site="before"
+                r"\override Score.SustainPedalLineSpanner.padding = #8", site="before"
             ),
-            # abjad.LilyPondLiteral(
-            #     [
-            #         r"\override Score.SustainPedalLineSpanner.X-extent = #'(0 . 0)",
-            #         r"\override Score.SustainPedalLineSpanner.Y-extent = #'(0 . 0)",
-            #         r"\override Score.SustainPedalLineSpanner.padding = #24",
-            #     ],
-            #     site="before"
-            # ),
+            abjad.LilyPondLiteral(
+                r"\override Score.SustainPedalLineSpanner.padding = #5.5", site="before"
+            ),
+            abjad.LilyPondLiteral(
+                r"\revert Score.SustainPedalLineSpanner.padding", site="absolute_after"
+            ),
         ],
-        selector=trinton.select_leaves_by_index([0, 9, 15, 43], pitched=True),
+        selector=trinton.select_leaves_by_index([0, 9, 15, -4, -1], pitched=True),
     ),
     trinton.linear_attachment_command(
         attachments=itertools.cycle(
@@ -1281,26 +1308,152 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index(
             [
                 0,
-                1,
-                2,
                 8,
                 9,
                 14,
                 15,
                 34,
-                # 43, 47,
+                -4,
+                -1,
             ],
             pitched=True,
         ),
-        # direction=abjad.DOWN
     ),
-    library.manual_beam_positions(
-        positions=(
-            -7.5,
-            -3,
-        ),
-        selector=trinton.select_leaves_by_index([10, -1], pitched=True),
-    ),
+    # trinton.hooked_spanner_command(
+    #     string=r"""\markup {
+    #         \fontsize #10
+    #         \override #'(font-name . "ekmelos")
+    #         \override #'(whiteout-style . "outline")
+    #         \override #'(whiteout . 1)
+    #         \override #'(layer . 20)
+    #         {
+    #             \char ##xe650
+    #         }
+    #     }""",
+    #     selector=trinton.select_leaves_by_index([0, 3], pitched=True),
+    #     padding=12,
+    #     direction="down",
+    #     right_padding=1.5,
+    #     full_string=True,
+    #     style="solid-line-with-up-hook",
+    #     hspace=None,
+    #     command="One",
+    #     tag=None,
+    #     tweaks=None,
+    # ),
+    # trinton.hooked_spanner_command(
+    #     string=r"""\markup {
+    #         \fontsize #10
+    #         \override #'(font-name . "ekmelos")
+    #         \override #'(whiteout-style . "outline")
+    #         \override #'(whiteout . 1)
+    #         \override #'(layer . 20)
+    #         {
+    #             \char ##xe650
+    #         }
+    #     }""",
+    #     selector=trinton.select_leaves_by_index([4, 9], pitched=True),
+    #     padding=13,
+    #     direction="down",
+    #     right_padding=3,
+    #     full_string=True,
+    #     style="solid-line-with-up-hook",
+    #     hspace=None,
+    #     command="One",
+    #     tag=None,
+    #     tweaks=None,
+    # ),
+    # trinton.hooked_spanner_command(
+    #     string=r"""\markup {
+    #         \fontsize #10
+    #         \override #'(font-name . "ekmelos")
+    #         \override #'(whiteout-style . "outline")
+    #         \override #'(whiteout . 1)
+    #         \override #'(layer . 20)
+    #         {
+    #             \char ##xe650
+    #         }
+    #     }""",
+    #     selector=trinton.select_leaves_by_index([10, 14], pitched=True),
+    #     padding=21,
+    #     direction="down",
+    #     right_padding=4,
+    #     full_string=True,
+    #     style="solid-line-with-up-hook",
+    #     hspace=None,
+    #     command="One",
+    #     tag=None,
+    #     tweaks=None,
+    # ),
+    # trinton.hooked_spanner_command(
+    #     string=r"""\markup {
+    #         \fontsize #10
+    #         \override #'(font-name . "ekmelos")
+    #         \override #'(whiteout-style . "outline")
+    #         \override #'(whiteout . 1)
+    #         \override #'(layer . 20)
+    #         {
+    #             \char ##xe650
+    #         }
+    #     }""",
+    #     selector=trinton.select_leaves_by_index([15, 28], pitched=True),
+    #     padding=21,
+    #     direction="down",
+    #     right_padding=3,
+    #     full_string=True,
+    #     style="solid-line-with-up-hook",
+    #     hspace=None,
+    #     command="One",
+    #     tag=None,
+    #     tweaks=None,
+    # ),
+    # trinton.hooked_spanner_command(
+    #     string=r"""\markup {
+    #         \fontsize #10
+    #         \override #'(font-name . "ekmelos")
+    #         \override #'(whiteout-style . "outline")
+    #         \override #'(whiteout . 1)
+    #         \override #'(layer . 20)
+    #         {
+    #             \char ##xe650
+    #         }
+    #     }""",
+    #     selector=trinton.select_leaves_by_index([29, 34], pitched=True),
+    #     padding=21,
+    #     direction="down",
+    #     right_padding=5,
+    #     full_string=True,
+    #     style="solid-line-with-up-hook",
+    #     hspace=None,
+    #     command="One",
+    #     tag=None,
+    #     tweaks=None,
+    # ),
+    # trinton.hooked_spanner_command(
+    #     string=r"""\markup {
+    #         \fontsize #10
+    #         \override #'(font-name . "ekmelos")
+    #         \override #'(whiteout-style . "outline")
+    #         \override #'(whiteout . 1)
+    #         \override #'(layer . 20)
+    #         {
+    #             \char ##xe650
+    #         }
+    #     }""",
+    #     selector=trinton.select_leaves_by_index([44, 47], pitched=True),
+    #     padding=0,
+    #     direction="down",
+    #     right_padding=3,
+    #     full_string=True,
+    #     style="solid-line-with-up-hook",
+    #     hspace=None,
+    #     command="One",
+    #     tag=None,
+    #     tweaks=[
+    #         abjad.Tweak(r"- \tweak Y-extent ##f"),
+    #         abjad.Tweak(r"- \tweak Y-offset -31"),
+    #     ],
+    # ),
     voice=score["piano 3 voice"],
     preprocessor=trinton.fuse_quarters_preprocessor((1, 2, 3, 2, 2, 3)),
 )
@@ -1524,7 +1677,36 @@ trinton.make_music(
     voice=score["Global Context"],
 )
 
-for measure in [34]:
+for measure in [
+    1,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    19,
+    20,
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    32,
+    34,
+]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
         trinton.attachment_command(
@@ -1535,21 +1717,26 @@ for measure in [34]:
         ),
         voice=score["Global Context"],
     )
-#
-# for measure in [
-#     7,
-# ]:
-#     trinton.make_music(
-#         lambda _: trinton.select_target(_, (measure,)),
-#         trinton.attachment_command(
-#             attachments=[
-#                 abjad.LilyPondLiteral(r"\break", site="absolute_after"),
-#             ],
-#             selector=trinton.select_leaves_by_index([0]),
-#         ),
-#         voice=score["Global Context"],
-#     )
-#
+
+for measure in [
+    2,
+    10,
+    18,
+    24,
+    31,
+    33,
+]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[
+                abjad.LilyPondLiteral(r"\break", site="absolute_after"),
+            ],
+            selector=trinton.select_leaves_by_index([0]),
+        ),
+        voice=score["Global Context"],
+    )
+
 for measure in [
     1,
     2,
@@ -1583,6 +1770,7 @@ for measure in [
     31,
     32,
     33,
+    34,
 ]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
@@ -1597,6 +1785,7 @@ for measure in [
 
 for measure in [
     18,
+    35,
 ]:
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
@@ -1609,19 +1798,6 @@ for measure in [
         voice=score["Global Context"],
     )
 
-# for measure in [
-#     16,
-# ]:
-#     trinton.make_music(
-#         lambda _: trinton.select_target(_, (measure,)),
-#         trinton.attachment_command(
-#             attachments=[
-#                 abjad.LilyPondLiteral(r"\pageBreak", site="absolute_after"),
-#             ],
-#             selector=trinton.select_leaves_by_index([0]),
-#         ),
-#         voice=score["Global Context"],
-#     )
 
 # beautification
 

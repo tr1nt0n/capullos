@@ -224,7 +224,7 @@ def connect_notes_to_upper_staff(selector=trinton.pleaves(), stem_lengths=28):
 
         opening_literal = abjad.LilyPondLiteral(opening_list, site="before")
 
-        closing_literal = abjad.LilyPondLiteral(closing_list, site="absolute_after")
+        closing_literal = abjad.LilyPondLiteral(closing_list, site="after")
 
         abjad.attach(opening_literal, abjad.select.leaf(selections, 0))
         abjad.attach(closing_literal, abjad.select.leaf(selections, -1))

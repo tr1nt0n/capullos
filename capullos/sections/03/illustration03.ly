@@ -25,6 +25,7 @@
                   \abjad-metronome-mark-markup #3 #0 #2 #" 72 " 
               }
             }
+            \noBreak
             \noPageBreak
             \once \override Score.BarLine.transparent = ##f
             \once \override MultiMeasureRest.transparent = ##t
@@ -33,64 +34,83 @@
             R1 * 1/4
             - \tweak font-size #'10
             _ \long-fermata
+            \break
             \noPageBreak
             \once \override Score.BarLine.transparent = ##f
             \time 3/8
             s1 * 3/8
+            \noBreak
             \noPageBreak
             \time 2/8
             s1 * 1/4
+            \noBreak
             \noPageBreak
             \time 3/8
             s1 * 3/8
+            \noBreak
             \noPageBreak
             \time 2/4
             s1 * 1/2
+            \noBreak
             \noPageBreak
             \time 2/8
             s1 * 1/4
+            \noBreak
             \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/8
             s1 * 1/4
+            \noBreak
             \noPageBreak
             \time 3/4
             s1 * 3/4
+            \noBreak
             \noPageBreak
             \time 2/8
             s1 * 1/4
+            \break
             \noPageBreak
             \time 3/8
             s1 * 3/8
+            \noBreak
             \noPageBreak
             \time 2/8
             s1 * 1/4
+            \noBreak
             \noPageBreak
             \time 3/8
             s1 * 3/8
+            \noBreak
             \noPageBreak
             \time 2/8
             s1 * 1/4
+            \noBreak
             \noPageBreak
             \time 3/8
             s1 * 3/8
+            \noBreak
             \noPageBreak
             \time 2/8
             s1 * 1/4
+            \noBreak
             \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/8
             s1 * 1/4
+            \noBreak
             \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/8
             s1 * 1/4
+            \break
             \pageBreak
             \time 2/4
             s1 * 1/2
+            \noBreak
             \noPageBreak
             \time 2/8
             s1 * 1/4
+            \noBreak
             \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/8
@@ -108,25 +128,31 @@
               }
             }
             \startTextSpan
+            \noBreak
             \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/8
             s1 * 1/4
+            \noBreak
             \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/8
             s1 * 1/4
+            \noBreak
             \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/8
             s1 * 1/4
             \stopTextSpan
+            \break
             \noPageBreak
             \time 5/8
             s1 * 5/8
+            \noBreak
             \noPageBreak
             \time 2/8
             s1 * 1/4
+            \noBreak
             \noPageBreak
             \time 3/8
             s1 * 3/8
@@ -143,33 +169,42 @@
               }
             }
             \startTextSpan
+            \noBreak
             \noPageBreak
             \time 2/8
             s1 * 1/4
+            \noBreak
             \noPageBreak
             \time 3/8
             s1 * 3/8
+            \noBreak
             \noPageBreak
             \time 2/4
             s1 * 1/2
             \stopTextSpan
+            \noBreak
             \noPageBreak
             \time 2/8
             s1 * 1/4
+            \break
             \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/8
             s1 * 1/4
+            \noBreak
             \noPageBreak
             \time 3/4
             s1 * 3/4
+            \break
             \noPageBreak
             \time 5/4
             s1 * 5/4
             \noBreak
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 5/4
             s1 * 5/4
+            \pageBreak
         }
         \context StaffGroup = "Staff Group"
         <<
@@ -1370,7 +1405,6 @@
                         r4
                         \!
                         s1 * 5/4
-                        \override Staff.Stem.direction = #DOWN
                         \clef "treble"
                         s1 * 5/4
                     }
@@ -1766,13 +1800,11 @@
                             - \accent
                             \mp
                             [
-                            (
                             \sustainOn
+                            ^ (
                             df8
                             - \staccato
-                            \sustainOff
                             ef8
-                            \sustainOn
                         }
                         \once \override Accidental.X-extent = #'(-0.75 . 0.5)
                         <a,,! af,,! e,! fs,! g,!>16
@@ -1783,8 +1815,8 @@
                         fs,,16
                         - \sharp-articulation
                         - \tenuto
-                        (
                         \<
+                        ^ (
                         e,16
                         f,16
                         )
@@ -1792,8 +1824,8 @@
                         \once \override Accidental.X-extent = #'(-0.75 . 0.5)
                         <c! g! b!>4
                         \f
-                        (
                         \>
+                        ^ (
                         \once \override Accidental.X-extent = #'(-0.75 . 0.5)
                         <g,! a! a,! c!>4
                         - \marcato
@@ -1806,11 +1838,10 @@
                         a,32
                         - \accent
                         \p
-                        - \tweak Beam.positions #'(-7.5 . -3)
                         [
-                        (
                         - \tweak stencil #abjad-flared-hairpin
                         \<
+                        ^ (
                         \once \override Staff.Accidental.stencil = ##f
                         bf,32
                         - \flat-articulation
@@ -1829,17 +1860,17 @@
                         \mf
                         )
                         \sustainOff
-                        \once \override TupletBracket.direction = #DOWN
+                        \once \override TupletBracket.direction = #UP
                         \times 4/6
                         {
                             \once \override DynamicLineSpanner.padding = #3.5
-                            \override Score.SustainPedalLineSpanner.padding = #14
+                            \override Score.SustainPedalLineSpanner.padding = #8
                             df32
                             \fff
-                            (
                             - \tweak stencil #constante-hairpin
                             \<
                             \sustainOn
+                            ^ (
                             \once \override Staff.Accidental.stencil = ##f
                             ef32
                             - \accent
@@ -1876,10 +1907,9 @@
                         \set stemRightBeamCount = 1
                         df32
                         - \flat-articulation
-                        \once \override TupletBracket.direction = #DOWN
+                        \once \override TupletBracket.direction = #UP
                         \times 2/3
                         {
-                            \override Staff.Stem.direction = #DOWN
                             b,,8
                             - \staccato
                             df8
@@ -1892,13 +1922,13 @@
                         - \tenuto
                         g,16
                         - \marcato
-                        (
+                        ^ (
                         ef16
                         \set stemLeftBeamCount = 2
                         \set stemRightBeamCount = 1
                         g16
                         - \accent
-                        \once \override TupletBracket.direction = #DOWN
+                        \once \override TupletBracket.direction = #UP
                         \times 2/3
                         {
                             \once \override Staff.Accidental.stencil = ##f
@@ -1919,12 +1949,12 @@
                         - \accent
                         \ppp
                         )
-                        \once \override DynamicLineSpanner.padding = #2
+                        \once \override DynamicLineSpanner.padding = #3
                         c'32
                         - \tenuto
                         \p
-                        (
-                        \once \override DynamicLineSpanner.padding = #3.5
+                        _ (
+                        \once \override DynamicLineSpanner.padding = #6
                         \once \override Staff.Accidental.stencil = ##f
                         df'32
                         - \flat-articulation
@@ -1934,14 +1964,14 @@
                         \change Staff = "piano 3 staff"
                         ef32
                         - \accent
-                        (
+                        _ (
                         \once \override DynamicLineSpanner.padding = #3
                         \set stemLeftBeamCount = 3
                         \set stemRightBeamCount = 1
                         f32
                         \p
                         )
-                        \once \override TupletBracket.direction = #DOWN
+                        \once \override TupletBracket.direction = #UP
                         \times 2/3
                         {
                             \change Staff = "piano 1 staff"
@@ -1950,12 +1980,11 @@
                             e'16
                             - \staccato
                             \change Staff = "piano 3 staff"
-                            \once \override DynamicLineSpanner.padding = #5.5
                             gf16
                             - \accent
                             \f
-                            (
-                            \once \override DynamicLineSpanner.padding = #4
+                            _ (
+                            \once \override DynamicLineSpanner.padding = #5
                             \once \override Staff.Accidental.stencil = ##f
                             af16
                             - \flat-articulation
@@ -1967,12 +1996,15 @@
                         <af! bf! a'! bf'! cs''!>8
                         - \tenuto
                         \mp
+                        \once \override DynamicLineSpanner.padding = #2
+                        \override Score.SustainPedalLineSpanner.padding = #5.5
                         b32
                         - \marcato
                         \fff
-                        (
                         - \tweak stencil #abjad-flared-hairpin
                         \>
+                        \sustainOn
+                        ^ (
                         \once \override Staff.Accidental.stencil = ##f
                         a'32
                         - \natural-articulation
@@ -1984,9 +2016,10 @@
                         - \natural-articulation
                         \p
                         )
+                        \sustainOff
                         ]
                         \change Staff = "piano 3 staff"
-                        \revert Staff.Stem.direction
+                        \revert Score.SustainPedalLineSpanner.padding
                     }
                 }
                 \context thirdStaff = "piano 4 staff"
