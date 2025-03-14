@@ -6,6 +6,7 @@ import itertools
 from abjadext import rmakers
 from capullos import rhythm
 
+# sieve time signatures
 
 vectors = rhythm.sieve.get_boolean_vector(total_length=100)
 
@@ -55,3 +56,25 @@ def return_sieve_time_signatures(index=0):
     return trinton.rotated_sequence(
         sieve_time_signatures, index % len(sieve_time_signatures)
     )
+
+
+# helianthated time signatures
+
+partitioned_numerators = abjad.sequence.partition_by_counts(
+    sequence=[3, 2, 2, 3, 4, 2, 3, 3, 2, 4],
+    counts=[
+        3,
+        3,
+        4,
+    ],
+    overhang=True,
+)
+
+helianthated_numerators = baca.sequence.helianthate(partitioned_numerators, n=-1, m=1)
+
+numerator_sequence = evans.Sequence(helianthated_numerators).flatten()
+
+helianthated_ts = []
+
+for _ in numerator_sequence:
+    helianthated_ts.append((_, 4))

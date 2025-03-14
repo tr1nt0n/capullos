@@ -268,6 +268,7 @@
                         \once \override Staff.Glissando.thickness = #8.25
                         \once \override NoteHead.duration-log = 2
                         \revert Dots.staff-position
+                        \revert Flag.stencil
                         <
                             \tweak style #'la
                             d,,,
@@ -1567,6 +1568,7 @@
                         \times 2/3
                         {
                             \ottava -2
+                            \revert Flag.stencil
                             \clef "bass"
                             df,,,8
                             - \accent

@@ -98,6 +98,10 @@ trinton.make_music(
         end_hook_right_padding=1.5,
         tag=None,
     ),
+    trinton.attachment_command(
+        attachments=[abjad.LilyPondLiteral(r"\revert Flag.stencil", site="before")],
+        selector=trinton.select_leaves_by_index([-1], pitched=True),
+    ),
     voice=score["piano 1 voice"],
 )
 
@@ -912,6 +916,10 @@ trinton.make_music(
                 54,
             ]
         ),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.LilyPondLiteral(r"\revert Flag.stencil", site="before")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
     ),
     voice=score["piano 3 voice"],
 )
