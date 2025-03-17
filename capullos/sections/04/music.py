@@ -17,6 +17,638 @@ score = library.capullos_score(section_ts)
 
 # piano rh music
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 13)),
+    evans.RhythmHandler(
+        rhythm.gesture_rhythms(
+            stage=2,
+            index=0,
+        )
+    ),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.respell_tuplets_command(rewrite_brackets=False),
+    evans.PitchHandler(["d'"]),
+    pitch.sieve_transposition(index=26),
+    trinton.respell_accidentals_command(selector=trinton.pleaves()),
+    # trinton.annotate_leaves_locally(selector=trinton.logical_ties(first=True, pitched=True, grace=False)),
+    trinton.octavation(
+        octave=4,
+        selector=trinton.select_logical_ties_by_index(
+            [
+                65,
+            ],
+            pitched=True,
+        ),
+    ),
+    trinton.octavation(
+        octave=3,
+        selector=trinton.select_logical_ties_by_index(
+            [
+                25,
+                60,
+                64,
+                66,
+                67,
+                69,
+                70,
+                85,
+                89,
+            ],
+            pitched=True,
+        ),
+    ),
+    trinton.octavation(
+        octave=2,
+        selector=trinton.select_logical_ties_by_index(
+            [
+                15,
+                17,
+                24,
+                26,
+                27,
+                45,
+                55,
+                61,
+                62,
+                68,
+                71,
+                72,
+                80,
+                84,
+                86,
+                87,
+                88,
+            ],
+            pitched=True,
+        ),
+    ),
+    trinton.octavation(
+        octave=1,
+        selector=trinton.select_logical_ties_by_index(
+            [
+                0,
+                1,
+                5,
+                6,
+                9,
+                10,
+                14,
+                16,
+                20,
+                21,
+                22,
+                29,
+                30,
+                35,
+                40,
+                41,
+                42,
+                46,
+                47,
+                49,
+                50,
+                54,
+                56,
+                57,
+                59,
+                63,
+                81,
+                82,
+            ],
+            pitched=True,
+        ),
+    ),
+    trinton.octavation(
+        octave=-1,
+        selector=trinton.select_logical_ties_by_index(
+            [
+                3,
+                4,
+                18,
+                32,
+                33,
+                38,
+                78,
+            ],
+            pitched=True,
+        ),
+    ),
+    trinton.pitch_with_selector_command(
+        pitch_list=["g''''", "g'''"],
+        selector=trinton.select_logical_ties_by_index(
+            [90, 91, 92, 93, 94, 95], pitched=True, grace=False
+        ),
+    ),
+    trinton.pitch_with_selector_command(
+        pitch_list=[
+            "g''''",
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [
+                96,
+                97,
+                98,
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                105,
+                106,
+            ],
+            pitched=True,
+            grace=False,
+        ),
+    ),
+    pitch.make_sieve_chords(
+        index=0,
+        selector=trinton.select_logical_ties_by_index(
+            [
+                7,
+                15,
+                16,
+                17,
+                60,
+                70,
+                75,
+                86,
+                96,
+            ],
+            pitched=True,
+            grace=False,
+        ),
+    ),
+    trinton.octavation(
+        octave=2,
+        selector=trinton.notehead_selector(
+            chord_indices=[
+                6,
+            ],
+            head_indices_lists=[[0]],
+        ),
+    ),
+    trinton.octavation(
+        octave=1,
+        selector=trinton.notehead_selector(
+            chord_indices=[
+                0,
+                1,
+                2,
+                5,
+            ],
+            head_indices_lists=[
+                [0, 1],
+                [0],
+                [0, 1],
+                [0, 1, 2, 3],
+            ],
+        ),
+    ),
+    trinton.octavation(
+        octave=-1,
+        selector=trinton.notehead_selector(
+            chord_indices=[
+                3,
+                6,
+                7,
+                8,
+            ],
+            head_indices_lists=[
+                [
+                    -2,
+                    -3,
+                ],
+                [-1],
+                [2, 3],
+                [2, 3],
+            ],
+        ),
+    ),
+    trinton.octavation(
+        octave=-2,
+        selector=trinton.notehead_selector(
+            chord_indices=[
+                1,
+                4,
+                5,
+                9,
+            ],
+            head_indices_lists=[
+                [
+                    3,
+                ],
+                [-1, -2],
+                [
+                    -1,
+                ],
+                [-2],
+            ],
+        ),
+    ),
+    trinton.octavation(
+        octave=-3,
+        selector=trinton.notehead_selector(
+            chord_indices=[
+                1,
+                3,
+                7,
+                8,
+            ],
+            head_indices_lists=[
+                [
+                    4,
+                ],
+                [-1],
+                [4],
+                [4],
+            ],
+        ),
+    ),
+    trinton.octavation(
+        octave=-4,
+        selector=trinton.notehead_selector(
+            chord_indices=[
+                9,
+            ],
+            head_indices_lists=[
+                [-1],
+            ],
+        ),
+    ),
+    # trinton.annotate_leaves_locally(selector=trinton.pleaves()),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index(
+            [
+                3,
+                6,
+                8,
+                16,
+                20,
+                34,
+                35,
+                37,
+                38,
+                52,
+                53,
+                61,
+                63,
+                71,
+                73,
+                76,
+                78,
+                87,
+                89,
+                94,
+                97,
+                100,
+                102,
+                111,
+            ],
+            pitched=True,
+            grace=False,
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.BeamCount(
+                left=3,
+                right=1,
+            ),
+            abjad.BeamCount(
+                left=1,
+                right=2,
+            ),
+            abjad.BeamCount(
+                left=2,
+                right=1,
+            ),
+            abjad.BeamCount(
+                left=1,
+                right=3,
+            ),
+            abjad.BeamCount(
+                left=3,
+                right=1,
+            ),
+            abjad.BeamCount(
+                left=1,
+                right=3,
+            ),
+            abjad.BeamCount(
+                left=2,
+                right=1,
+            ),
+            abjad.BeamCount(
+                left=1,
+                right=2,
+            ),
+            abjad.BeamCount(
+                left=3,
+                right=1,
+            ),
+            abjad.BeamCount(
+                left=1,
+                right=2,
+            ),
+            abjad.BeamCount(
+                left=3,
+                right=1,
+            ),
+            abjad.BeamCount(
+                left=1,
+                right=2,
+            ),
+            abjad.BeamCount(
+                left=2,
+                right=1,
+            ),
+            abjad.BeamCount(
+                left=1,
+                right=2,
+            ),
+            abjad.BeamCount(
+                left=3,
+                right=1,
+            ),
+            abjad.BeamCount(
+                left=1,
+                right=2,
+            ),
+            abjad.BeamCount(
+                left=2,
+                right=1,
+            ),
+            abjad.BeamCount(
+                left=3,
+                right=0,
+            ),
+            abjad.BeamCount(
+                left=2,
+                right=1,
+            ),
+            abjad.BeamCount(
+                left=1,
+                right=2,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                12,
+                13,
+                14,
+                15,
+                30,
+                31,
+                41,
+                42,
+                49,
+                50,
+                57,
+                58,
+                66,
+                67,
+                91,
+                92,
+                93,
+                94,
+                107,
+                108,
+            ],
+            pitched=True,
+            grace=False,
+        ),
+    ),
+    trinton.force_accidentals_command(
+        selector=abjad.select.chords,
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartSlur(), abjad.StopSlur()]),
+        selector=trinton.select_leaves_by_index(
+            [
+                8,
+                19,
+                90,
+                94,
+            ],
+            pitched=True,
+            grace=False,
+        ),
+        direction=abjad.UP,
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartSlur(), abjad.StopSlur()]),
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+                7,
+                20,
+                34,
+                35,
+                37,
+                38,
+                52,
+                53,
+                62,
+                63,
+                72,
+                73,
+                77,
+                78,
+                89,
+                95,
+                101,
+            ],
+            pitched=True,
+            grace=False,
+        ),
+        direction=abjad.DOWN,
+    ),
+    trinton.vertical_accidentals(
+        selector=trinton.select_logical_ties_by_index(
+            [
+                20,
+                22,
+                26,
+                29,
+                30,
+                31,
+                32,
+                42,
+                48,
+                50,
+                51,
+                53,
+                54,
+                55,
+                63,
+                65,
+                67,
+                68,
+                69,
+            ],
+            first=True,
+            pitched=True,
+            grace=False,
+        )
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation(">")],
+        selector=trinton.select_logical_ties_by_index(
+            [
+                96,
+                97,
+                98,
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                105,
+                106,
+            ],
+            pitched=True,
+            first=True,
+            grace=False,
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override TupletBracket.padding = #4", site="before"
+            ),
+            abjad.LilyPondLiteral(
+                r"\once \override TupletBracket.padding = #4", site="before"
+            ),
+            abjad.LilyPondLiteral(
+                r"\once \override TupletBracket.padding = #5", site="before"
+            ),
+            abjad.LilyPondLiteral(
+                r"\once \override TupletBracket.padding = #6", site="before"
+            ),
+        ],
+        selector=trinton.select_tuplets_by_index([2, 4, 5, 7]),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Accidental.X-extent = #'(-0.75 . 0.5)", site="before"
+            ),
+        ],
+        selector=abjad.select.chords,
+    ),
+    trinton.ottava_command(
+        octave=2,
+        selector=trinton.select_logical_ties_by_index(
+            [61, 73, 83, -1], pitched=True, first=True, grace=False
+        ),
+    ),
+    trinton.tremolo_command(
+        selector=trinton.select_logical_ties_by_index(
+            [7, 15, 16, 17, 60, 70, 75, 86], pitched=True, grace=False
+        )
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.StartHairpin(">"),
+            abjad.Dynamic("ppp"),
+            abjad.StartHairpin("<|"),
+            abjad.Dynamic("f"),
+            abjad.Dynamic("mp"),
+            abjad.Dynamic("fp"),
+            abjad.StartHairpin("<"),
+            trinton.make_custom_dynamic("fffp"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("mf"),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic("p"),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic("ppp"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("mf"),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic("p"),
+            abjad.StartHairpin("<|"),
+            abjad.Dynamic("ff"),
+            abjad.StartHairpin("--"),
+            abjad.Dynamic("pp"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("mf"),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic("pp"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("f"),
+            abjad.StartHairpin("--"),
+            trinton.make_custom_dynamic("s. ppp"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("mf"),
+            trinton.make_custom_dynamic("sffz"),
+            trinton.make_custom_dynamic("s. p"),
+            trinton.make_custom_dynamic("s. mf"),
+            abjad.StartHairpin("<"),
+            abjad.StartHairpin(">"),
+            abjad.StopHairpin(),
+            abjad.StartHairpin("<"),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [
+                0,
+                7,
+                7,
+                8,
+                11,
+                15,
+                15,
+                18,
+                18,
+                27,
+                27,
+                33,
+                33,
+                36,
+                36,
+                48,
+                48,
+                51,
+                52,
+                60,
+                60,
+                61,
+                61,
+                67,
+                67,
+                70,
+                70,
+                71,
+                71,
+                75,
+                76,
+                85,
+                86,
+                87,
+                90,
+                92,
+                94,
+                96,
+                97,
+            ],
+            first=True,
+            pitched=True,
+            grace=False,
+        ),
+    ),
+    voice=score["piano 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (14,)),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("ff")], selector=trinton.select_leaves_by_index([0])
+    ),
+    voice=score["piano 1 voice"],
+)
 
 # globals
 
@@ -34,66 +666,61 @@ trinton.fermata_measures(
     tag=abjad.Tag("+SCORE"),
 )
 
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (1, 3)),
-#     trinton.linear_attachment_command(
-#         attachments=[
-#             abjad.BarLine(".|:", site="before"),
-#             abjad.LilyPondLiteral(
-#                 r'\tweak text "×3" \startMeasureSpanner', site="absolute_before"
-#             ),
-#             abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after"),
-#             abjad.BarLine(":|.|:", site="after"),
-#             abjad.LilyPondLiteral(
-#                 [
-#                     r"\revert Score.BarLine.color",
-#                     r"\revert Score.SpanBar.color",
-#                 ],
-#                 site="absolute_after",
-#             ),
-#         ],
-#         selector=trinton.select_leaves_by_index([0, 0, -1, -1, -1]),
-#     ),
-#     # trinton.attachment_command(
-#     #     attachments=[
-#     #         abjad.LilyPondLiteral(
-#     #             r"\override Score.BarLine.X-extent = #'(2 . 2)", site="before"
-#     #         ),
-#     #         # abjad.LilyPondLiteral(
-#     #         #     r"\once \override TimeSignature.X-offset = -2.7", site="before"
-#     #         # ),
-#     #     ],
-#     #     selector=trinton.select_leaves_by_index([0]),
-#     # ),
-#     voice=score["Global Context"],
-# )
-#
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (2,)),
-#     trinton.linear_attachment_command(
-#         attachments=[
-#             abjad.LilyPondLiteral(
-#                 [
-#                     r"\override Score.BarLine.color = \二",
-#                     r"\override Score.SpanBar.color = \二",
-#                 ],
-#                 site="absolute_before",
-#             ),
-#             abjad.BarLine(".|:", site="before"),
-#             abjad.LilyPondLiteral(
-#                 r'\tweak text "×3" \startMeasureSpanner', site="absolute_before"
-#             ),
-#             abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after"),
-#             abjad.BarLine(":|.", site="after"),
-#             # abjad.LilyPondLiteral(
-#             #     r'\revert Score.BarLine.color', site="absolute_after"
-#             # ),
-#         ],
-#         selector=trinton.select_leaves_by_index([0, 0, 0, -1, -1]),
-#     ),
-#     voice=score["piano 1 voice"],
-# )
-#
+trinton.make_music(
+    lambda _: trinton.select_target(_, (18,)),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.BarLine(".|:", site="before"),
+            abjad.LilyPondLiteral(
+                r'\tweak text "×7" \startMeasureSpanner', site="absolute_before"
+            ),
+            abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after"),
+            abjad.BarLine(":|.", site="after"),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+                0,
+                -1,
+                -1,
+            ]
+        ),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                [
+                    r"\override Score.BarLine.transparent = ##f",
+                    r"\override Score.BarLine.X-extent = #'(2 . 2)",
+                    r"\override Score.BarLine.bar-extent = #'(-2 . 2)",
+                    # r"\once \override TimeSignature.X-offset = 2.7",
+                ],
+                site="before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (19,)),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.BarLine("|.", site="after"),
+            # abjad.LilyPondLiteral(
+            #     r'\revert Score.BarLine.color', site="absolute_after"
+            # ),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+            ]
+        ),
+    ),
+    voice=score["piano 1 voice"],
+)
+
 # trinton.make_music(
 #     lambda _: trinton.select_target(_, (7,)),
 #     trinton.attachment_command(
@@ -146,28 +773,138 @@ trinton.fermata_measures(
 #     voice=score["Global Context"],
 # )
 #
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (1,)),
-#     trinton.attachment_command(
-#         attachments=[
-#             library.return_metronome_markup(
-#                 note_value="eighth",
-#                 tempo=72,
-#                 padding=17.5,
-#                 # metric_modulation=abjad.MetricModulation(
-#                 #     left_rhythm=abjad.Tuplet("5:4", r"c'16"),
-#                 #     right_rhythm=abjad.Note("c'16"),
-#                 # ),
-#                 site="after",
-#                 hspace=None,
-#                 string_only=False,
-#             ),
-#         ],
-#         selector=trinton.select_leaves_by_index([0]),
-#     ),
-#     voice=score["Global Context"],
-# )
-#
+trinton.make_music(
+    lambda _: trinton.select_target(_, (2, 4)),
+    trinton.spanner_command(
+        strings=[
+            r"\markup \fontsize #5 { Rit. }",
+            library.return_metronome_markup(
+                note_value="eighth",
+                tempo=72,
+                padding=0,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Note("c'8."),
+                    right_rhythm=abjad.Note("c'8"),
+                ),
+                site="after",
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+                1,
+            ]
+        ),
+        style="solid-line-with-arrow",
+        padding=14,
+        tweaks=None,
+        right_padding=-12,
+        direction=None,
+        full_string=True,
+        command="",
+        end_hook=False,
+        end_hook_style="dashed-line-with-hook",
+        end_hook_right_padding=1.5,
+        tag=None,
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\markup \hspace #14 {}",
+            library.return_metronome_markup(
+                note_value="eighth",
+                tempo=108,
+                padding=0,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Tuplet("3:2", "c'8"),
+                    right_rhythm=abjad.Note("c'8"),
+                ),
+                site="after",
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([1, -1]),
+        style="solid-line-with-arrow",
+        padding=14,
+        tweaks=None,
+        right_padding=-8,
+        direction=None,
+        full_string=True,
+        command="",
+        end_hook=False,
+        end_hook_style="dashed-line-with-hook",
+        end_hook_right_padding=1.5,
+        tag=None,
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9, 11)),
+    trinton.spanner_command(
+        strings=[
+            r"\markup \fontsize #5 { Rit. }",
+            library.return_metronome_markup(
+                note_value="eighth",
+                tempo=48,
+                padding=0,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Tuplet("8:9", "c'4"),
+                    right_rhythm=abjad.Note("c'8"),
+                ),
+                site="after",
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+                1,
+            ]
+        ),
+        style="solid-line-with-arrow",
+        padding=12,
+        tweaks=None,
+        right_padding=-10,
+        direction=None,
+        full_string=True,
+        command="",
+        end_hook=False,
+        end_hook_style="dashed-line-with-hook",
+        end_hook_right_padding=1.5,
+        tag=None,
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"\markup \hspace #17 {}",
+            library.return_metronome_markup(
+                note_value="eighth",
+                tempo=160,
+                padding=0,
+                metric_modulation=abjad.MetricModulation(
+                    left_rhythm=abjad.Tuplet("5:6", "c'32"),
+                    right_rhythm=abjad.Note("c'8"),
+                ),
+                site="after",
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([1, -1]),
+        style="solid-line-with-arrow",
+        padding=12,
+        tweaks=None,
+        right_padding=-14,
+        direction=None,
+        full_string=True,
+        command="",
+        end_hook=False,
+        end_hook_style="dashed-line-with-hook",
+        end_hook_right_padding=1.5,
+        tag=None,
+    ),
+    voice=score["Global Context"],
+)
+
 #
 # trinton.make_music(
 #     lambda _: trinton.select_target(_, (21, 24)),
@@ -237,65 +974,36 @@ trinton.fermata_measures(
 #     voice=score["Global Context"],
 # )
 #
-# for measure in [
-#     1,
-#     3,
-#     4,
-#     5,
-#     6,
-#     7,
-#     8,
-#     9,
-#     11,
-#     12,
-#     13,
-#     14,
-#     15,
-#     16,
-#     17,
-#     19,
-#     20,
-#     21,
-#     22,
-#     23,
-#     25,
-#     26,
-#     27,
-#     28,
-#     29,
-#     30,
-#     32,
-#     34,
-# ]:
-#     trinton.make_music(
-#         lambda _: trinton.select_target(_, (measure,)),
-#         trinton.attachment_command(
-#             attachments=[
-#                 abjad.LilyPondLiteral(r"\noBreak", site="absolute_after"),
-#             ],
-#             selector=trinton.select_leaves_by_index([0]),
-#         ),
-#         voice=score["Global Context"],
-#     )
-#
-# for measure in [
-#     2,
-#     10,
-#     18,
-#     24,
-#     31,
-#     33,
-# ]:
-#     trinton.make_music(
-#         lambda _: trinton.select_target(_, (measure,)),
-#         trinton.attachment_command(
-#             attachments=[
-#                 abjad.LilyPondLiteral(r"\break", site="absolute_after"),
-#             ],
-#             selector=trinton.select_leaves_by_index([0]),
-#         ),
-#         voice=score["Global Context"],
-#     )
+for measure in [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[
+                abjad.LilyPondLiteral(r"\noBreak", site="absolute_after"),
+            ],
+            selector=trinton.select_leaves_by_index([0]),
+        ),
+        voice=score["Global Context"],
+    )
+
+for measure in [4, 8]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[
+                abjad.LilyPondLiteral(r"\break", site="absolute_after"),
+            ],
+            selector=trinton.select_leaves_by_index([0]),
+        ),
+        voice=score["Global Context"],
+    )
 #
 # for measure in [
 #     1,
