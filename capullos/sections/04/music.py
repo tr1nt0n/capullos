@@ -547,7 +547,18 @@ trinton.make_music(
     ),
     trinton.tremolo_command(
         selector=trinton.select_logical_ties_by_index(
-            [7, 15, 16, 17, 60, 70, 75, 86], pitched=True, grace=False
+            [
+                # 7,
+                15,
+                16,
+                17,
+                # 60,
+                70,
+                # 75,
+                86,
+            ],
+            pitched=True,
+            grace=False,
         )
     ),
     trinton.linear_attachment_command(
@@ -639,6 +650,128 @@ trinton.make_music(
             grace=False,
         ),
     ),
+    trinton.attachment_command(
+        attachments=[abjad.Arpeggio()],
+        selector=abjad.select.chords,
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"""\markup {
+                \hspace #1.25
+                \override #'(font-size . 4.5)
+                \override #'(font-name . "ekmelos")
+                \override #'(whiteout-style . "outline")
+                \override #'(whiteout . 1)
+                \override #'(layer . 20)
+                {
+                    \char ##xe220
+                }
+            }""",
+            r"""\markup {
+                \hspace #0.6
+                \override #'(font-size . 4.5)
+                \override #'(font-name . "ekmelos")
+                \override #'(whiteout-style . "outline")
+                \override #'(whiteout . 1)
+                \override #'(layer . 20)
+                {
+                    \char ##xe222
+                }
+            }""",
+        ],
+        selector=trinton.select_logical_ties_by_index([7, 8], first=True, pitched=True),
+        style="solid-line-with-arrow",
+        padding=0,
+        right_padding=-5,
+        direction=None,
+        full_string=True,
+        command="One",
+        tag=None,
+        tweaks=[
+            abjad.Tweak(r"- \tweak Y-extent ##f"),
+            abjad.Tweak(r"- \tweak Y-offset -6"),
+        ],
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"""\markup {
+                \hspace #1.1
+                \override #'(font-size . 4.5)
+                \override #'(font-name . "ekmelos")
+                \override #'(whiteout-style . "outline")
+                \override #'(whiteout . 1)
+                \override #'(layer . 20)
+                {
+                    \char ##xe222
+                }
+            }""",
+            r"""\markup {
+                \hspace #0.6
+                \override #'(font-size . 4.5)
+                \override #'(font-name . "ekmelos")
+                \override #'(whiteout-style . "outline")
+                \override #'(whiteout . 1)
+                \override #'(layer . 20)
+                {
+                    \char ##xe220
+                }
+            }""",
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [60, 61], first=True, pitched=True
+        ),
+        style="solid-line-with-arrow",
+        padding=0,
+        right_padding=-6,
+        direction=None,
+        full_string=True,
+        command="One",
+        tag=None,
+        tweaks=[
+            abjad.Tweak(r"- \tweak Y-extent ##f"),
+            abjad.Tweak(r"- \tweak Y-offset -1.5"),
+        ],
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"""\markup {
+                \hspace #1.1
+                \override #'(font-size . 4.5)
+                \override #'(font-name . "ekmelos")
+                \override #'(whiteout-style . "outline")
+                \override #'(whiteout . 1)
+                \override #'(layer . 20)
+                {
+                    \char ##xe221
+                }
+            }""",
+            r"""\markup {
+                \hspace #0.6
+                \override #'(font-size . 4.5)
+                \override #'(font-name . "ekmelos")
+                \override #'(whiteout-style . "outline")
+                \override #'(whiteout . 1)
+                \override #'(layer . 20)
+                {
+                    \char ##xe220
+                }
+            }""",
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [75, 76], first=True, pitched=True
+        ),
+        style="solid-line-with-arrow",
+        padding=0,
+        right_padding=-5,
+        direction=None,
+        full_string=True,
+        command="One",
+        tag=None,
+        tweaks=[
+            abjad.Tweak(r"- \tweak Y-extent ##f"),
+            abjad.Tweak(r"- \tweak Y-offset 5"),
+        ],
+    ),
     voice=score["piano 1 voice"],
 )
 
@@ -648,6 +781,94 @@ trinton.make_music(
         attachments=[abjad.Dynamic("ff")], selector=trinton.select_leaves_by_index([0])
     ),
     voice=score["piano 1 voice"],
+)
+
+# lh music
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    evans.RhythmHandler(evans.tuplet([(-6, 1, 1, 4)])),
+    rmakers.rewrite_dots,
+    trinton.respell_tuplets_command(rewrite_brackets=False),
+    voice=score["piano 3 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (3,)),
+    evans.RhythmHandler(evans.tuplet([(1, 1, 1)])),
+    voice=score["piano 3 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4, 9)),
+    evans.RhythmHandler(
+        evans.tuplet(
+            [
+                (-1,),
+                (1, 1, 1, 1, 1, 1),
+                (
+                    1,
+                    1,
+                    1,
+                    1,
+                ),
+                (-1,),
+                (1, 1, 1, 1),
+                (1, 1, 1),
+                (1, 1, 1, 1),
+                (1, 1, 1, 1),
+                (1, 1, 1),
+                (1,),
+                (1, 1, 1, 1),
+                (1, 1, 1, 1, 1, 1, 1, 1),
+                (1,),
+                (
+                    1,
+                    1,
+                    1,
+                    1,
+                    4,
+                    4,
+                ),
+                (1, 1, 1, 1),
+                (-1,),
+            ]
+        )
+    ),
+    rmakers.rewrite_dots,
+    trinton.respell_tuplets_command(rewrite_brackets=False),
+    trinton.replace_with_rhythm_selection(
+        rhythmhandler=evans.RhythmHandler(
+            evans.accelerando(
+                [(1, 20), (1, 8), (1, 32)],
+                treat_tuplets=False,
+            )
+        ),
+        selector=trinton.select_leaves_by_index([47], pitched=True),
+        preprolated=True,
+    ),
+    # trinton.annotate_leaves_locally(selector=trinton.pleaves()),
+    voice=score["piano 3 voice"],
+    preprocessor=trinton.fuse_eighths_preprocessor(
+        (
+            2,
+            1,
+            1,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            4,
+            4,
+            100,
+        )
+    ),
 )
 
 # globals

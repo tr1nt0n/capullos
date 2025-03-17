@@ -167,14 +167,43 @@
                             ]
                             \once \override Accidental.X-extent = #'(-0.75 . 0.5)
                             <a'! c''! bf'! a''!>2
-                            :32
+                            \arpeggio
                             \ppp
                             )
+                            - \tweak Y-extent ##f
+                            - \tweak Y-offset -6
+                            - \tweak padding #0
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { {
+                                            \hspace #1.25
+                                            \override #'(font-size . 4.5)
+                                            \override #'(font-name . "ekmelos")
+                                            \override #'(whiteout-style . "outline")
+                                            \override #'(whiteout . 1)
+                                            \override #'(layer . 20)
+                                            {
+                                                \char ##xe220
+                                            }
+                                        } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup {
+                                            \hspace #0.6
+                                            \override #'(font-size . 4.5)
+                                            \override #'(font-name . "ekmelos")
+                                            \override #'(whiteout-style . "outline")
+                                            \override #'(whiteout . 1)
+                                            \override #'(layer . 20)
+                                            {
+                                                \char ##xe222
+                                            }
+                                        }
+                            - \tweak bound-details.right.padding 5
+                            \startTextSpanOne
                             - \tweak stencil #abjad-flared-hairpin
                             \<
                         }
                         d'''8
                         \f
+                        \stopTextSpanOne
                         [
                         ^ (
                         fs''8
@@ -200,14 +229,17 @@
                         \once \override Accidental.X-extent = #'(-0.75 . 0.5)
                         <b''! f''! c'''! ef''! cs'''!>4
                         :32
+                        \arpeggio
                         \fp
                         \<
                         \once \override Accidental.X-extent = #'(-0.75 . 0.5)
                         <ef''! c'''! e'''! fs'''!>4
                         :32
+                        \arpeggio
                         \once \override Accidental.X-extent = #'(-0.75 . 0.5)
                         <e'''! fs'''! g'''! g''!>4
                         :32
+                        \arpeggio
                         )
                         g'32
                             _ #(make-dynamic-script (markup #:whiteout #:italic "fffp"))
@@ -340,9 +372,37 @@
                         ]
                         \once \override Accidental.X-extent = #'(-0.75 . 0.5)
                         <fs''! f'''! fs'''! a''! c'''!>4
-                        :32
+                        \arpeggio
                         \ff
                         )
+                        - \tweak Y-extent ##f
+                        - \tweak Y-offset -1.5
+                        - \tweak padding #0
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { {
+                                        \hspace #1.1
+                                        \override #'(font-size . 4.5)
+                                        \override #'(font-name . "ekmelos")
+                                        \override #'(whiteout-style . "outline")
+                                        \override #'(whiteout . 1)
+                                        \override #'(layer . 20)
+                                        {
+                                            \char ##xe222
+                                        }
+                                    } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup {
+                                        \hspace #0.6
+                                        \override #'(font-size . 4.5)
+                                        \override #'(font-name . "ekmelos")
+                                        \override #'(whiteout-style . "outline")
+                                        \override #'(whiteout . 1)
+                                        \override #'(layer . 20)
+                                        {
+                                            \char ##xe220
+                                        }
+                                    }
+                        - \tweak bound-details.right.padding 6
+                        \startTextSpanOne
                         - \tweak stencil #constante-hairpin
                         \<
                         \times 2/3
@@ -350,6 +410,7 @@
                             \ottava 2
                             ef'''16
                             \pp
+                            \stopTextSpanOne
                             [
                             \<
                             _ (
@@ -385,6 +446,7 @@
                             \once \override Accidental.X-extent = #'(-0.75 . 0.5)
                             <b'''! d''''! bf''''! b''''! b''''!>4
                             :32
+                            \arpeggio
                             \pp
                             )
                             \<
@@ -403,11 +465,40 @@
                         \once \override Accidental.X-extent = #'(-0.75 . 0.5)
                         <d''! fs! d'! fs'!>2
                             _ #(make-dynamic-script (markup #:whiteout #:italic "s. ppp"))
-                        :32
+                        \arpeggio
                         )
+                        - \tweak Y-extent ##f
+                        - \tweak Y-offset 5
+                        - \tweak padding #0
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { {
+                                        \hspace #1.1
+                                        \override #'(font-size . 4.5)
+                                        \override #'(font-name . "ekmelos")
+                                        \override #'(whiteout-style . "outline")
+                                        \override #'(whiteout . 1)
+                                        \override #'(layer . 20)
+                                        {
+                                            \char ##xe221
+                                        }
+                                    } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup {
+                                        \hspace #0.6
+                                        \override #'(font-size . 4.5)
+                                        \override #'(font-name . "ekmelos")
+                                        \override #'(whiteout-style . "outline")
+                                        \override #'(whiteout . 1)
+                                        \override #'(layer . 20)
+                                        {
+                                            \char ##xe220
+                                        }
+                                    }
+                        - \tweak bound-details.right.padding 5
+                        \startTextSpanOne
                         \times 2/3
                         {
                             d'8
+                            \stopTextSpanOne
                             [
                             \<
                             _ (
@@ -431,10 +522,12 @@
                         <d'''! bf'''! c''''! cs''''! a'''!>4
                             _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
                         :32
+                        \arpeggio
                         ~
                         \once \override Accidental.X-extent = #'(-0.75 . 0.5)
                         <d''' bf''' c'''' cs'''' a'''>8
                         :64
+                        \arpeggio
                         )
                         [
                         cs''''16.
@@ -474,6 +567,7 @@
                             <g''''! b'''! c''''!>4
                             - \accent
                             \!
+                            \arpeggio
                             )
                         }
                         \times 4/6
@@ -558,15 +652,183 @@
                 {
                     \context Voice = "piano 3 voice"
                     {
-                        s1 * 1
+                        \times 4/6
+                        {
+                            r2.
+                            c'8
+                            c'8
+                            c'2
+                        }
                         s1 * 3/4
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 1/2
-                        s1 * 3/4
-                        s1 * 1/2
-                        s1 * 1/2
-                        s1 * 1
+                        c'4
+                        c'4
+                        c'4
+                        r4
+                        \times 4/6
+                        {
+                            c'32
+                            ^ \markup 0
+                            c'32
+                            ^ \markup 1
+                            c'32
+                            ^ \markup 2
+                            c'32
+                            ^ \markup 3
+                            c'32
+                            ^ \markup 4
+                            c'32
+                            ^ \markup 5
+                        }
+                        c'32
+                        ^ \markup 6
+                        c'32
+                        ^ \markup 7
+                        c'32
+                        ^ \markup 8
+                        c'32
+                        ^ \markup 9
+                        r4
+                        c'16
+                        ^ \markup 10
+                        c'16
+                        ^ \markup 11
+                        c'16
+                        ^ \markup 12
+                        c'16
+                        ^ \markup 13
+                        \times 2/3
+                        {
+                            c'16
+                            ^ \markup 14
+                            c'16
+                            ^ \markup 15
+                            c'16
+                            ^ \markup 16
+                        }
+                        c'32
+                        ^ \markup 17
+                        c'32
+                        ^ \markup 18
+                        c'32
+                        ^ \markup 19
+                        c'32
+                        ^ \markup 20
+                        c'32
+                        ^ \markup 21
+                        c'32
+                        ^ \markup 22
+                        c'32
+                        ^ \markup 23
+                        c'32
+                        ^ \markup 24
+                        \times 2/3
+                        {
+                            c'16
+                            ^ \markup 25
+                            c'16
+                            ^ \markup 26
+                            c'16
+                            ^ \markup 27
+                        }
+                        c'8
+                        ^ \markup 28
+                        c'32
+                        ^ \markup 29
+                        c'32
+                        ^ \markup 30
+                        c'32
+                        ^ \markup 31
+                        c'32
+                        ^ \markup 32
+                        c'32
+                        ^ \markup 33
+                        c'32
+                        ^ \markup 34
+                        c'32
+                        ^ \markup 35
+                        c'32
+                        ^ \markup 36
+                        c'32
+                        ^ \markup 37
+                        c'32
+                        ^ \markup 38
+                        c'32
+                        ^ \markup 39
+                        c'32
+                        ^ \markup 40
+                        c'4
+                        ^ \markup 41
+                        \times 2/3
+                        {
+                            c'16
+                            ^ \markup 42
+                            c'16
+                            ^ \markup 43
+                            c'16
+                            ^ \markup 44
+                            c'16
+                            ^ \markup 45
+                            c'4
+                            ^ \markup 46
+                            \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                {
+                                    \context Score = "Score"
+                                    \with
+                                    {
+                                        \override SpacingSpanner.spacing-increment = 0.5
+                                        proportionalNotationDuration = ##f
+                                    }
+                                    <<
+                                        \context RhythmicStaff = "Rhythmic_Staff"
+                                        \with
+                                        {
+                                            \remove Time_signature_engraver
+                                            \remove Staff_symbol_engraver
+                                            \override Stem.direction = #up
+                                            \override Stem.length = 5
+                                            \override TupletBracket.bracket-visibility = ##t
+                                            \override TupletBracket.direction = #up
+                                            \override TupletBracket.minimum-length = 4
+                                            \override TupletBracket.padding = 1.25
+                                            \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                            \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                            \override TupletNumber.font-size = 0
+                                            \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                            tupletFullLength = ##t
+                                        }
+                                        {
+                                            c'4
+                                        }
+                                    >>
+                                    \layout
+                                    {
+                                        indent = 0
+                                        ragged-right = ##t
+                                    }
+                                }
+                            \times 1/1
+                            {
+                                \once \override Beam.grow-direction = #left
+                                c'32 * 43/32
+                                ^ \markup 47
+                                c'32 * 49/32
+                                ^ \markup 48
+                                c'32 * 17/8
+                                ^ \markup 49
+                                c'32 * 3
+                                ^ \markup 50
+                            }
+                            \revert TupletNumber.text
+                        }
+                        c'8
+                        ^ \markup 51
+                        c'8
+                        ^ \markup 52
+                        c'8
+                        ^ \markup 53
+                        c'8
+                        ^ \markup 54
+                        r2
                         s1 * 3/4
                         s1 * 3/4
                         s1 * 1/2
