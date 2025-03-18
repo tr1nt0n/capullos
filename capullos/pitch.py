@@ -69,13 +69,19 @@ def sieve_transposition(
     return transposition
 
 
-def make_sieve_chords(index=0, selector=rhythm.punctuation_selector()):
+def make_sieve_chords(hand="rh", index=0, selector=rhythm.punctuation_selector()):
     def make_chords(argument):
         selections = selector(argument)
 
+        if hand == "rh":
+            note_amount = 4
+
+        if hand == "lh":
+            note_amount = 2
+
         interval_sets = abjad.sequence.partition_by_counts(
             sequence=interval_list,
-            counts=[4 for _ in range(0, 100)],
+            counts=[note_amount for _ in range(0, 100)],
             overhang=True,
         )
 

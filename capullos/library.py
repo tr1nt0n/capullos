@@ -68,6 +68,32 @@ revert_to_lh = eval(
 )
 
 # notation tools
+
+
+def left_beam(selector=None):
+    def beam(argument):
+        if selector is not None:
+            for tuplet in selector(argument):
+                abjad.override(tuplet[0]).Beam.grow_direction = abjad.LEFT
+        else:
+            for tuplet in abjad.select.tuplets(argument):
+                abjad.override(tuplet[0]).Beam.grow_direction = abjad.LEFT
+
+    return beam
+
+
+def right_beam(selector=None):
+    def beam(argument):
+        if selector is not None:
+            for tuplet in selector(argument):
+                abjad.override(tuplet[0]).Beam.grow_direction = abjad.RIGHT
+        else:
+            for tuplet in abjad.select.tuplets(argument):
+                abjad.override(tuplet[0]).Beam.grow_direction = abjad.RIGHT
+
+    return beam
+
+
 def manual_beam_positions(positions, selector=abjad.select.leaves):
     def beaming(argument):
         selections = selector(argument)

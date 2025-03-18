@@ -5,6 +5,7 @@
             \time 4/4
             s1 * 1
             \noBreak
+            \noPageBreak
             \time 3/4
             s1 * 3/4
             - \tweak padding #14
@@ -22,6 +23,7 @@
             - \tweak bound-details.right.padding 12
             \startTextSpan
             \noBreak
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -41,24 +43,30 @@
             - \tweak bound-details.right.padding 8
             \startTextSpan
             \noBreak
+            \noPageBreak
             \time 2/4
             s1 * 1/2
             \stopTextSpan
             \break
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/4
             s1 * 1/2
             \noBreak
+            \noPageBreak
             \time 3/4
             s1 * 3/4
             \noBreak
+            \noPageBreak
             \time 2/4
             s1 * 1/2
             \noBreak
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/4
             s1 * 1/2
             \break
+            \noPageBreak
             \time 4/4
             s1 * 1
             - \tweak padding #12
@@ -75,6 +83,7 @@
             }
             - \tweak bound-details.right.padding 10
             \startTextSpan
+            \noPageBreak
             \time 3/4
             s1 * 3/4
             \stopTextSpan
@@ -92,19 +101,25 @@
             }
             - \tweak bound-details.right.padding 14
             \startTextSpan
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
             \stopTextSpan
+            \noPageBreak
             \time 2/4
             s1 * 1/2
+            \noPageBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/4
             s1 * 1/2
+            \noPageBreak
             \time 3/4
             s1 * 3/4
+            \noPageBreak
             \time 4/4
             s1 * 1
+            \pageBreak
             \time 5/4
             s1 * 5/4
             \time 6/4
@@ -112,11 +127,12 @@
             \tweak text "×7" \startMeasureSpanner
             \bar ".|:"
             \override Score.BarLine.transparent = ##f
-            \override Score.BarLine.X-extent = #'(2 . 2)
+            \override Score.BarLine.X-extent = #'(4 . 4)
             \override Score.BarLine.bar-extent = #'(-2 . 2)
             \time 7/4
             s1 * 7/4
             \bar ":|."
+            \revert Score.BarLine.X-extent
             \stopMeasureSpanner
             \once \override Score.BarLine.transparent = ##f
             \once \override MultiMeasureRest.transparent = ##t
@@ -544,7 +560,11 @@
                             g''''16
                             [
                             \<
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 1
                             g'''16
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 2
                             g''''16
                             \>
                             g'''16
@@ -587,12 +607,147 @@
                         - \accent
                         ]
                         \ottava 0
-                        s1 * 3/4
+                        \arpeggioArrowUp
+                        \ottava 2
+                        <af'''! g''''!>4
+                        - \tenuto
+                        \arpeggio
                         \ff
-                        s1 * 1
-                        s1 * 5/4
-                        s1 * 3/2
-                        s1 * 7/4
+                        (
+                        \ottava 0
+                        \arpeggioArrowUp
+                        \ottava 1
+                        <a''! af'''!>4
+                        - \tenuto
+                        \arpeggio
+                        \ottava 0
+                        \arpeggioArrowUp
+                        <bf'! a''!>4
+                        - \tenuto
+                        \arpeggio
+                        )
+                        \arpeggioArrowUp
+                        \ottava 2
+                        <af'''! g''''!>4
+                        - \tenuto
+                        \arpeggio
+                        (
+                        \ottava 0
+                        \arpeggioArrowUp
+                        \ottava 1
+                        <a''! af'''!>4
+                        - \tenuto
+                        \arpeggio
+                        \ottava 0
+                        \arpeggioArrowUp
+                        <bf'! a''!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowUp
+                        <b! bf'!>4
+                        - \tenuto
+                        \arpeggio
+                        )
+                        \arpeggioArrowUp
+                        \ottava 2
+                        <af'''! g''''!>4
+                        - \tenuto
+                        \arpeggio
+                        (
+                        \ottava 0
+                        \arpeggioArrowUp
+                        \ottava 1
+                        <a''! af'''!>4
+                        - \tenuto
+                        \arpeggio
+                        \ottava 0
+                        \arpeggioArrowUp
+                        <bf'! a''!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowUp
+                        <b! bf'!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowUp
+                        \ottava -1
+                        <c! b!>4
+                        - \tenuto
+                        \arpeggio
+                        )
+                        \ottava 0
+                        \arpeggioArrowUp
+                        \ottava 2
+                        <af'''! g''''!>4
+                        - \tenuto
+                        \arpeggio
+                        (
+                        \ottava 0
+                        \arpeggioArrowUp
+                        \ottava 1
+                        <a''! af'''!>4
+                        - \tenuto
+                        \arpeggio
+                        \ottava 0
+                        \arpeggioArrowUp
+                        <bf'! a''!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowUp
+                        <b! bf'!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowUp
+                        \ottava -1
+                        <c! b!>4
+                        - \tenuto
+                        \arpeggio
+                        \ottava 0
+                        \arpeggioArrowUp
+                        \ottava -2
+                        <df,! c!>4
+                        - \tenuto
+                        \arpeggio
+                        )
+                        \ottava 0
+                        \arpeggioArrowUp
+                        \ottava 2
+                        <af'''! g''''!>4
+                        - \tenuto
+                        \arpeggio
+                        (
+                        \ottava 0
+                        \arpeggioArrowUp
+                        \ottava 1
+                        <a''! af'''!>4
+                        - \tenuto
+                        \arpeggio
+                        \ottava 0
+                        \arpeggioArrowUp
+                        <bf'! a''!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowUp
+                        <b! bf'!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowUp
+                        \ottava -1
+                        <c! b!>4
+                        - \tenuto
+                        \arpeggio
+                        \ottava 0
+                        \arpeggioArrowUp
+                        \ottava -2
+                        <df,! c!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowUp
+                        <d,,! df,!>4
+                        - \tenuto
+                        \arpeggio
+                        )
+                        \ottava 0
                           %! +SCORE
                     %%% \once \override MultiMeasureRest.transparent = ##t
                           %! +SCORE
@@ -600,7 +755,6 @@
                           %! +SCORE
                     %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
-                        \bar "|."
                     }
                 }
                 \context timeSignatureStaff = "piano 2 staff"
@@ -641,121 +795,254 @@
                         \times 4/6
                         {
                             r2.
-                            c'8
-                            c'8
-                            c'2
+                            \sustainOn
+                            \clef "bass"
+                            bf8
+                            [
+                            ^ (
+                            af8
+                            ]
+                            \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                            <d,! d!>2
+                            \arpeggio
+                            )
+                            \sustainOff
+                            - \tweak Y-extent ##f
+                            - \tweak Y-offset 4
+                            - \tweak padding #0
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { {
+                                            \hspace #1.25
+                                            \override #'(font-size . 4.5)
+                                            \override #'(font-name . "ekmelos")
+                                            \override #'(whiteout-style . "outline")
+                                            \override #'(whiteout . 1)
+                                            \override #'(layer . 20)
+                                            {
+                                                \char ##xe222
+                                            }
+                                        } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup {
+                                            \hspace #0.6
+                                            \override #'(font-size . 4.5)
+                                            \override #'(font-name . "ekmelos")
+                                            \override #'(whiteout-style . "outline")
+                                            \override #'(whiteout . 1)
+                                            \override #'(layer . 20)
+                                            {
+                                                \char ##xe220
+                                            }
+                                        }
+                            - \tweak bound-details.right.padding 5
+                            \startTextSpanOne
                         }
                         s1 * 3/4
-                        c'4
-                        c'4
-                        c'4
+                        \stopTextSpanOne
+                        \sustainOn
+                        \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                        \clef "treble"
+                        <b! d'! b'!>4
+                        :32
+                        \arpeggio
+                        _ (
+                        \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                        <g! g'! af'!>4
+                        :32
+                        \arpeggio
+                        \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                        <fs'! e'! c'!>4
+                        :32
+                        \arpeggio
+                        )
+                        \sustainOff
                         r4
+                        \sustainOn
+                        \once \override TupletBracket.padding = #4
                         \times 4/6
                         {
-                            c'32
-                            ^ \markup 0
-                            c'32
-                            ^ \markup 1
-                            c'32
-                            ^ \markup 2
-                            c'32
-                            ^ \markup 3
-                            c'32
-                            ^ \markup 4
-                            c'32
-                            ^ \markup 5
+                            e''32
+                            [
+                            ^ (
+                            \once \override Staff.Accidental.stencil = ##f
+                            bf'32
+                            - \flat-articulation
+                            \once \override Staff.Accidental.stencil = ##f
+                            af'32
+                            - \flat-articulation
+                            \once \override Staff.Accidental.stencil = ##f
+                            gf'32
+                            - \flat-articulation
+                            e'32
+                            \once \override Staff.Accidental.stencil = ##f
+                            \set stemLeftBeamCount = 3
+                            \set stemRightBeamCount = 1
+                            df'32
+                            - \flat-articulation
                         }
-                        c'32
-                        ^ \markup 6
-                        c'32
-                        ^ \markup 7
-                        c'32
-                        ^ \markup 8
-                        c'32
-                        ^ \markup 9
+                        \once \override Staff.Accidental.stencil = ##f
+                        \set stemLeftBeamCount = 1
+                        \set stemRightBeamCount = 3
+                        af'32
+                        - \flat-articulation
+                        \once \override Staff.Accidental.stencil = ##f
+                        f'32
+                        - \natural-articulation
+                        \once \override Staff.Accidental.stencil = ##f
+                        ef'32
+                        - \flat-articulation
+                        \once \override Staff.Accidental.stencil = ##f
+                        df'32
+                        - \flat-articulation
+                        )
+                        \sustainOff
+                        ]
+                        \afterGrace
                         r4
-                        c'16
-                        ^ \markup 10
-                        c'16
-                        ^ \markup 11
-                        c'16
-                        ^ \markup 12
-                        c'16
-                        ^ \markup 13
-                        \times 2/3
+                        \sustainOn
                         {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
                             c'16
-                            ^ \markup 14
-                            c'16
-                            ^ \markup 15
-                            c'16
-                            ^ \markup 16
+                            \sustainOff
                         }
-                        c'32
-                        ^ \markup 17
-                        c'32
-                        ^ \markup 18
-                        c'32
-                        ^ \markup 19
-                        c'32
-                        ^ \markup 20
-                        c'32
-                        ^ \markup 21
-                        c'32
-                        ^ \markup 22
-                        c'32
-                        ^ \markup 23
-                        c'32
-                        ^ \markup 24
+                        \clef "bass"
+                        bf16
+                        [
+                        \sustainOn
+                        _ (
+                        e16
+                        d16
+                        \set stemLeftBeamCount = 2
+                        \set stemRightBeamCount = 1
+                        b,16
                         \times 2/3
                         {
-                            c'16
-                            ^ \markup 25
-                            c'16
-                            ^ \markup 26
-                            c'16
-                            ^ \markup 27
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 2
+                            a16
+                            \once \override Staff.Accidental.stencil = ##f
+                            af16
+                            - \flat-articulation
+                            \set stemLeftBeamCount = 2
+                            \set stemRightBeamCount = 1
+                            c16
                         }
-                        c'8
-                        ^ \markup 28
+                        \set stemLeftBeamCount = 1
+                        \set stemRightBeamCount = 3
                         c'32
-                        ^ \markup 29
+                        \once \override Staff.Accidental.stencil = ##f
+                        bf32
+                        - \flat-articulation
+                        \once \override Staff.Accidental.stencil = ##f
+                        af32
+                        - \flat-articulation
+                        \set stemLeftBeamCount = 3
+                        \set stemRightBeamCount = 1
+                        f32
+                        \set stemLeftBeamCount = 1
+                        \set stemRightBeamCount = 3
                         c'32
-                        ^ \markup 30
-                        c'32
-                        ^ \markup 31
-                        c'32
-                        ^ \markup 32
-                        c'32
-                        ^ \markup 33
-                        c'32
-                        ^ \markup 34
-                        c'32
-                        ^ \markup 35
-                        c'32
-                        ^ \markup 36
-                        c'32
-                        ^ \markup 37
-                        c'32
-                        ^ \markup 38
-                        c'32
-                        ^ \markup 39
-                        c'32
-                        ^ \markup 40
-                        c'4
-                        ^ \markup 41
+                        \once \override Staff.Accidental.stencil = ##f
+                        a32
+                        - \natural-articulation
+                        \once \override Staff.Accidental.stencil = ##f
+                        gf32
+                        - \flat-articulation
+                        \set stemLeftBeamCount = 3
+                        \set stemRightBeamCount = 1
+                        e32
                         \times 2/3
                         {
-                            c'16
-                            ^ \markup 42
-                            c'16
-                            ^ \markup 43
-                            c'16
-                            ^ \markup 44
-                            c'16
-                            ^ \markup 45
-                            c'4
-                            ^ \markup 46
+                            \set stemLeftBeamCount = 1
+                            \set stemRightBeamCount = 2
+                            d16
+                            a16
+                            g'16
+                            )
+                            \sustainOff
+                            ]
+                        }
+                        f'8
+                        [
+                        \sustainOn
+                        _ (
+                        d'32
+                        c'32
+                        \once \override Staff.Accidental.stencil = ##f
+                        gf32
+                        - \flat-articulation
+                        \once \override Staff.Accidental.stencil = ##f
+                        \set stemLeftBeamCount = 3
+                        \set stemRightBeamCount = 1
+                        ef32
+                        - \flat-articulation
+                        \set stemLeftBeamCount = 1
+                        \set stemRightBeamCount = 3
+                        df'32
+                        \once \override Staff.Accidental.stencil = ##f
+                        b32
+                        - \natural-articulation
+                        a32
+                        \once \override Staff.Accidental.stencil = ##f
+                        ef32
+                        - \flat-articulation
+                        c32
+                        a,32
+                        g,32
+                        f,32
+                        ]
+                        \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                        <c! d! b,!>4
+                        \arpeggio
+                        )
+                        \sustainOff
+                        - \tweak Y-extent ##f
+                        - \tweak Y-offset 5
+                        - \tweak padding #0
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { {
+                                        \hspace #1.25
+                                        \override #'(font-size . 4.5)
+                                        \override #'(font-name . "ekmelos")
+                                        \override #'(whiteout-style . "outline")
+                                        \override #'(whiteout . 1)
+                                        \override #'(layer . 20)
+                                        {
+                                            \char ##xe220
+                                        }
+                                    } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup {
+                                        \hspace #0.6
+                                        \override #'(font-size . 4.5)
+                                        \override #'(font-name . "ekmelos")
+                                        \override #'(whiteout-style . "outline")
+                                        \override #'(whiteout . 1)
+                                        \override #'(layer . 20)
+                                        {
+                                            \char ##xe222
+                                        }
+                                    }
+                        - \tweak bound-details.right.padding 5
+                        \startTextSpanOne
+                        \times 2/3
+                        {
+                            \ottava 2
+                            a''16
+                            \stopTextSpanOne
+                            [
+                            \sustainOn
+                            ^ (
+                            g''16
+                            f''16
+                            d''16
+                            ]
+                            \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                            <a'! f''!>4
+                            :32
+                            \arpeggio
                             \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                 {
                                     \context Score = "Score"
@@ -795,42 +1082,259 @@
                             \times 1/1
                             {
                                 \once \override Beam.grow-direction = #left
-                                c'32 * 43/32
-                                ^ \markup 47
-                                c'32 * 49/32
-                                ^ \markup 48
-                                c'32 * 17/8
-                                ^ \markup 49
-                                c'32 * 3
-                                ^ \markup 50
+                                gf'32 * 43/32
+                                [
+                                e''32 * 49/32
+                                d''32 * 17/8
+                                b''32 * 3
+                                )
+                                \sustainOff
+                                ]
                             }
                             \revert TupletNumber.text
                         }
-                        c'8
-                        ^ \markup 51
-                        c'8
-                        ^ \markup 52
-                        c'8
-                        ^ \markup 53
-                        c'8
-                        ^ \markup 54
+                        f'''8
+                        [
+                        \sustainOn
+                        ^ (
+                        ef'''8
+                        c''8
+                        \ottava 0
+                        bf8
+                        )
+                        ]
                         r2
-                        s1 * 3/4
-                        s1 * 3/4
+                        \sustainOff
+                        a16
+                        [
+                        \sustainOn
+                        ^ (
+                        df'16
+                        df16
+                        b,16
+                        \times 2/3
+                        {
+                            \clef "treble"
+                            a'8
+                            gf'8
+                            df'8
+                        }
+                        \ottava 2
+                        \clef "bass"
+                        bf''16
+                        g''16
+                        f''16
+                        ef''16
+                        ]
+                        \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                        <bf'! cs''! a''!>4
+                        :32
+                        \arpeggio
+                        ~
+                        \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                        <bf' cs'' a''>8
+                        :64
+                        \arpeggio
+                        )
+                        \sustainOff
+                        [
+                        \clef "treble"
+                        af'''8
+                        \sustainOn
+                        _ (
+                        gf'''8
+                        ef'''8
+                        )
+                        \sustainOff
+                        ]
+                        r16
+                        \sustainOn
+                        \clef "bass"
+                        g'16
+                        [
+                        ^ (
+                        g''16
+                        \set stemLeftBeamCount = 2
+                        \set stemRightBeamCount = 1
+                        g'16
+                        \set stemLeftBeamCount = 1
+                        \set stemRightBeamCount = 2
+                        g''16
+                        \sustainOff
+                        \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                        <af! e'! g'!>16
+                        - \accent
+                        \arpeggio
+                        ~
+                        \once \override Accidental.X-extent = #'(-0.75 . 0.5)
+                        <af e' g'>16
+                        \arpeggio
+                        g''16
+                        )
+                        ]
+                        \ottava 0
                         s1 * 1/2
-                        s1 * 1/2
-                        s1 * 3/4
-                        s1 * 1
-                        s1 * 5/4
-                        s1 * 3/2
-                        s1 * 7/4
+                        \arpeggioArrowDown
+                        \ottava 2
+                        <bf'! a''!>4
+                        - \tenuto
+                        \arpeggio
+                        (
+                        \sustainOn
+                        \ottava 0
+                        \arpeggioArrowDown
+                        \ottava 1
+                        <b! bf'!>4
+                        - \tenuto
+                        \arpeggio
+                        \ottava 0
+                        \arpeggioArrowDown
+                        <c! b!>4
+                        - \tenuto
+                        \arpeggio
+                        )
+                        \sustainOff
+                        \arpeggioArrowDown
+                        \ottava 2
+                        <bf'! a''!>4
+                        - \tenuto
+                        \arpeggio
+                        (
+                        \sustainOn
+                        \ottava 0
+                        \arpeggioArrowDown
+                        \ottava 1
+                        <b! bf'!>4
+                        - \tenuto
+                        \arpeggio
+                        \ottava 0
+                        \arpeggioArrowDown
+                        <c! b!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowDown
+                        <df,! c!>4
+                        - \tenuto
+                        \arpeggio
+                        )
+                        \sustainOff
+                        \arpeggioArrowDown
+                        \ottava 2
+                        <bf'! a''!>4
+                        - \tenuto
+                        \arpeggio
+                        (
+                        \sustainOn
+                        \ottava 0
+                        \arpeggioArrowDown
+                        \ottava 1
+                        <b! bf'!>4
+                        - \tenuto
+                        \arpeggio
+                        \ottava 0
+                        \arpeggioArrowDown
+                        <c! b!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowDown
+                        <df,! c!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowDown
+                        \ottava -1
+                        <d,,! df,!>4
+                        - \tenuto
+                        \arpeggio
+                        )
+                        \sustainOff
+                        \ottava 0
+                        \arpeggioArrowDown
+                        \ottava 2
+                        <bf'! a''!>4
+                        - \tenuto
+                        \arpeggio
+                        (
+                        \sustainOn
+                        \ottava 0
+                        \arpeggioArrowDown
+                        \ottava 1
+                        <b! bf'!>4
+                        - \tenuto
+                        \arpeggio
+                        \ottava 0
+                        \arpeggioArrowDown
+                        <c! b!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowDown
+                        <df,! c!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowDown
+                        \ottava -1
+                        <d,,! df,!>4
+                        - \tenuto
+                        \arpeggio
+                        \ottava 0
+                        \arpeggioArrowDown
+                        \ottava -2
+                        <ef,,,! d,,!>4
+                        - \tenuto
+                        \arpeggio
+                        )
+                        \sustainOff
+                        \ottava 0
+                        \arpeggioArrowDown
+                        \ottava 2
+                        <bf'! a''!>4
+                        - \tenuto
+                        \arpeggio
+                        (
+                        \sustainOn
+                        \ottava 0
+                        \arpeggioArrowDown
+                        \ottava 1
+                        <b! bf'!>4
+                        - \tenuto
+                        \arpeggio
+                        \ottava 0
+                        \arpeggioArrowDown
+                        <c! b!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowDown
+                        <df,! c!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowDown
+                        \ottava -1
+                        <d,,! df,!>4
+                        - \tenuto
+                        \arpeggio
+                        \ottava 0
+                        \arpeggioArrowDown
+                        \ottava -2
+                        <ef,,,! d,,!>4
+                        - \tenuto
+                        \arpeggio
+                        \arpeggioArrowDown
+                        <ef,,,!>4
+                        - \tenuto
+                        \arpeggio
+                        )
+                        \sustainOff
+                        \ottava 0
                           %! +SCORE
                     %%% \once \override MultiMeasureRest.transparent = ##t
                           %! +SCORE
                     %%% \once \override Rest.transparent = ##t
+                        \override Staff.TextScript.whiteout = ##f
                           %! +SCORE
                     %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                        - \tweak X-extent ##f
+                        _ \markup \fontsize #4 { \hspace #13 \column \override #'(font-name . "Bodoni72 Book Italic") { \line { February - March 2025 } \line { Iowa City, IA } } }
+                        \bar "|."
                     }
                 }
                 \context thirdStaff = "piano 4 staff"

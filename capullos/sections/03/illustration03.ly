@@ -127,6 +127,7 @@
                   \abjad-metronome-mark-markup #3 #0 #2 #" 48 " 
               }
             }
+            - \tweak bound-details.right.padding 8
             \startTextSpan
             \noBreak
             \noPageBreak
@@ -168,6 +169,7 @@
                   \abjad-metronome-mark-markup #3 #0 #2 #" 108 " 
               }
             }
+            - \tweak bound-details.right.padding 10
             \startTextSpan
             \noBreak
             \noPageBreak
