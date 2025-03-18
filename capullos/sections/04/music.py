@@ -1379,6 +1379,52 @@ trinton.make_music(
     voice=score["piano 3 voice"],
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (13,)),
+    trinton.aftergrace_command(
+        selector=trinton.select_leaves_by_index([0]), invisible=True
+    ),
+    trinton.spanner_command(
+        strings=[
+            trinton.boxed_markup(
+                string=["Place hand", "lightly on", "styrofoam."],
+                tweaks=None,
+                column="\column",
+                font_name="Bodoni72 Book",
+                fontsize=2,
+                string_only=True,
+            ),
+            trinton.boxed_markup(
+                string=[
+                    "Press styrofoam",
+                    "as firmly",
+                    "against the",
+                    "strings as",
+                    "possible.",
+                ],
+                tweaks=None,
+                column="\column",
+                font_name="Bodoni72 Book",
+                fontsize=2,
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        style="solid-line-with-arrow",
+        padding=0,
+        tweaks=None,
+        right_padding=-14,
+        direction=None,
+        full_string=True,
+        command="",
+        end_hook=False,
+        end_hook_style="dashed-line-with-hook",
+        end_hook_right_padding=1.5,
+        tag=None,
+    ),
+    voice=score["piano 3 voice"],
+)
+
 for measure in [14, 15, 16, 17, 18]:
     for voice_name, pitch_list, direction in zip(
         ["piano 1 voice", "piano 3 voice"],

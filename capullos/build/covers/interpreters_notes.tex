@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\setmainfont{Bodoni 72 Book}
+\usepackage[paperwidth=9in,paperheight=12in,margin=1in,headheight=0.0in,footskip=0.5in,includehead,includefoot,portrait]{geometry}
+\usepackage[absolute]{textpos}
+\TPGrid[0.5in, 0.25in]{23}{24}
+\parindent=0pt
+\parskip=12pt
+\usepackage{nopageno}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\begin{document}
+
+\begingroup
+\begin{center}
+\huge F O R E W O R D
+\end{center}
+\endgroup
+
+\begingroup
+\begin{center}
+\textbf{capullos}: Spanish for \textit{cocoons, flower buds,} or \textit{seeds}.
+\end{center}
+\endgroup
+
+\vspace{1\baselineskip}
+
+\begingroup
+\begin{center}
+\huge NOTES FOR THE INTERPRETER
+\end{center}
+\endgroup
+
+\begingroup
+\textbf{\circled{1} The piano is prepared} with \textbf{printer paper} and \textbf{thin chain} laid across the strings of the piano's \textbf{lowest octave}, and a small piece of \textbf{porous styrofoam} on top of the strings of the piano's \textbf{highest octave}. \textbf{\circled{2} Purple-coloured repeat signs} are repeated \textbf{within} the \textbf{black repeat signs} enclosing them. For example, at measures 17-19, illustrated below: \\
+\begin{center}
+\includegraphics[scale=0.4]{colored_repeats.png}\\
+\end{center}
+Measure \textbf{18} should be repeated \textbf{3 times} as part of the repetitions between measures \textbf{17} and \textbf{19}. \\
+\textbf{\circled{3}} The interpreter should be equipped with a \textbf{plastic card} with which to scrape the wire-wrapped strings. The approximate range of the scrape is given as a cluster, illustrated below: \\
+\begin{center}
+\includegraphics[scale=0.3]{card_notation.png}\\
+\end{center} 
+A \textbf{glissando} in this idiom indicates to scrape diagonally across the range of the strings. \textbf{\circled{4} Fractional ``bowing" indications}, as seen above, are given to prescribe the speed of the card across the string. \textbf{6/6} indicates the \textbf{edge of the interpreters reach}, and \textbf{0/6} indicates the string \textbf{right above the hammers}. The space between these points is approximately divided into six zones, which should be evenly and gradually approached at the rhythm of the notes to which they are attached. \textbf{\circled{5} Accelerating or slowing tremoli} are indicated by \textbf{arrows} emanating from a \textbf{stem-tremolo slash}, moving towards a different speed, as below: \\
+\begin{center}
+\includegraphics[scale=0.1]{accelerating_trem.png}\\
+\end{center} 
+wherein \textbf{three slashes} indicate \textbf{tremolo stretto}, \textbf{two slashes} indicate \textbf{tremolo moderato}, and \textbf{one slash} indicates \textbf{tremolo largo}. \\
+\textbf{\circled{6} The sustain pedal} should only be used when indicated. 
+\endgroup
+
+\end{document}

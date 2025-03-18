@@ -1173,7 +1173,23 @@
                         )
                         ]
                         \ottava 0
+                        \afterGrace
                         s1 * 1/2
+                        - \tweak padding #0
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \column { \line { Place hand } \line { lightly on } \line { styrofoam. }  } } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \column { \line { Press styrofoam } \line { as firmly } \line { against the } \line { strings as } \line { possible. }  } }
+                        - \tweak bound-details.right.padding 14
+                        \startTextSpan
+                        {
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                            \stopTextSpan
+                        }
                         \arpeggioArrowDown
                         \ottava 2
                         <bf'! a''!>4
